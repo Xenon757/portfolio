@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Dark is the default (and only) theme.
+ * Tailwind v4 has no tailwind.config — tokens are mapped to utilities
+ * in the @theme block below (bg-bg, text-fg, text-muted, text-accent, ...).
+ */
+:root {
+  --bg: #0b0b0c;
+  --bg-elevated: #151517;
+  --fg: #ecebe6;
+  --muted: #8b8a85;
+  --line: #2a2a2d;
+  --accent: #ff5c39;
+  --accent-fg: #0b0b0c;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display-face);
+
+  --text-hero: clamp(3rem, 12vw, 10rem);
+  --text-hero--line-height: 0.9;
+  --text-hero--letter-spacing: -0.01em;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
