@@ -37,7 +37,7 @@ Don't add Redux, a CMS, a database, or a UI kit — content is static and lives 
 ### Home (`/`) — sections in order
 Projects come right after the hero (decided with Aadi): recruiters already have the résumé, so the site's unique value is the projects. Experience stays, but lower and compact.
 
-1. **Hero** — "SOFTWARE ENGINEER" headline (huge, uppercase), one-line intro, CTA buttons (Email / GitHub / LinkedIn / Résumé), small status pill ("Open to Summer 2027 internships"), and a "View projects" link to `#projects`. Staggered text reveal on load. **Stats live inside the hero** (right column on desktop, a row on mobile) and count up as it reveals. Use these (all from the résumé):
+1. **Hero** — "SOFTWARE ENGINEER" headline (huge, uppercase), one-line intro, CTA buttons (Email / LinkedIn), small status pill ("Open to Summer 2027 internships"), and a "View projects" link to `#projects`. Staggered text reveal on load. **Stats live inside the hero** (right column on desktop, a row on mobile) and count up as it reveals. Use these (all from the résumé):
    - `4` — Software internships
    - `100+` — Students in the Python program he led (confirmed by Aadi)
    - `3rd` — Place at Purdue's largest freshman hackathon (HelloWorld)
@@ -45,7 +45,7 @@ Projects come right after the hero (decided with Aadi): recruiters already have 
 3. **About** — short paragraph + a large statement line that reveals word-by-word on scroll. Draft from the résumé summary: backend, cloud, and production systems; hardening and deploying public web services; teaching background. Don't mention StatusGo in About — Aadi just started there (it stays in Experience).
 4. **Stack** — grouped logo grid (see `stack.ts` in §4).
 5. **Experience** — compact vertical list: company, role, dates, location, 1–3 bullets (expandable on click). Lines draw in on scroll. Sewa International is included as a "Volunteer" entry.
-6. **Contact / Footer** — big "Have an opportunity in mind?" + email, socials, "Designed & built by Aadi Belwal".
+6. **Contact / Footer** — big "Have an opportunity in mind?" + email, LinkedIn, "Designed & built by Aadi Belwal".
 
 ### Sticky menu
 Hamburger (top-right) opening a full-screen overlay with Social / Menu / Get in touch columns. Menu links smooth-scroll to sections via Lenis.
@@ -62,12 +62,12 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 ### `site.ts`
 - Name: Aadi Belwal
 - Email: aadibelwal@gmail.com
-- GitHub: https://github.com/Xenon757
+- GitHub: https://github.com/Xenon757 — **don't link his GitHub profile anywhere on the site** (per Aadi). Project pages may link each project's own source repo.
 - LinkedIn: https://linkedin.com/in/aadi-belwal
 - Location: Palo Alto, CA / West Lafayette, IN
-- Résumé: `public/resume.pdf` (Aadi's SWE-intern version). It includes his phone number — Aadi approved that.
+- **No résumé on the site** — no download, link, or PDF in the repo. Aadi tailors his résumé for each company. (An earlier copy was purged from git history.)
 - Status: "Open to Summer 2027 internships"
-- **Don't put his phone number anywhere else** — not in page copy, data files, or metadata.
+- **Never put his phone number on the site** — not in page copy, data files, metadata, or any file in the repo.
 
 ### `projects.ts`
 
@@ -208,7 +208,6 @@ src/
 public/
   projects/              # <slug>-thumb.webp, <slug>-*.webp
   logos/                 # stack logos (SVG preferred)
-  resume.pdf
 docs/
   orbittrack-brief.md    # optional; overrides OrbitTrack copy
 ```

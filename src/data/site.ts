@@ -17,10 +17,8 @@ export const site = {
   intro:
     "CS student at Purdue with four software internships across backend, cloud, and production systems — I like hardening and shipping public web services.",
   email: "aadibelwal@gmail.com",
-  github: "https://github.com/Xenon757",
   linkedin: "https://linkedin.com/in/aadi-belwal",
   location: "Palo Alto, CA / West Lafayette, IN",
-  resume: "/resume.pdf",
   status: "Open to Summer 2027 internships",
 } as const;
 
@@ -53,8 +51,6 @@ export const stats = [
   { value: 3, suffix: "rd", label: "Place at Purdue's largest freshman hackathon" },
 ] as const;
 
-export const socials = [
-  { label: "GitHub", href: site.github },
-  { label: "LinkedIn", href: site.linkedin },
-  { label: "Résumé", href: site.resume },
-] as const;
+// No GitHub profile or résumé links on the site (Aadi tailors his résumé per
+// application). Project pages still link each project's source repo.
+export const socials = [{ label: "LinkedIn", href: site.linkedin }] as const;

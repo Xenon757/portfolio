@@ -1,6 +1,5 @@
-import { FileText } from "lucide-react";
 import { ContactMotion } from "@/components/motion/SectionMotion";
-import { GitHubIcon, LinkedInIcon } from "@/components/ui/BrandIcons";
+import { LinkedInIcon } from "@/components/ui/BrandIcons";
 import { Button } from "@/components/ui/Button";
 import { BackToTopButton, CopyEmailButton } from "@/components/ui/ContactButtons";
 import { site } from "@/data/site";
@@ -52,17 +51,9 @@ export function Contact() {
       </div>
 
       <div data-contact-fade className="mt-10 flex flex-wrap gap-3">
-        <Button href={site.github} external>
-          <GitHubIcon className="size-4" />
-          GitHub
-        </Button>
         <Button href={site.linkedin} external>
           <LinkedInIcon className="size-4" />
           LinkedIn
-        </Button>
-        <Button href={site.resume} external>
-          <FileText className="size-4" aria-hidden="true" />
-          Résumé
         </Button>
       </div>
 

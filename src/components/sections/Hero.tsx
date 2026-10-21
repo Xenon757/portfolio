@@ -1,6 +1,6 @@
-import { ArrowDown, FileText, Mail } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
 import { HeroMotion } from "@/components/motion/HeroMotion";
-import { GitHubIcon, LinkedInIcon } from "@/components/ui/BrandIcons";
+import { LinkedInIcon } from "@/components/ui/BrandIcons";
 import { Button } from "@/components/ui/Button";
 import { site, stats } from "@/data/site";
 
@@ -70,17 +70,9 @@ export function Hero() {
                 <Mail className="size-4" aria-hidden="true" />
                 Email me
               </Button>
-              <Button href={site.github} external>
-                <GitHubIcon className="size-4" />
-                GitHub
-              </Button>
               <Button href={site.linkedin} external>
                 <LinkedInIcon className="size-4" />
                 LinkedIn
-              </Button>
-              <Button href={site.resume} external>
-                <FileText className="size-4" aria-hidden="true" />
-                Résumé
               </Button>
             </div>
           </div>
