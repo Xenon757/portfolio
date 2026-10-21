@@ -1,10 +1,10 @@
 import { Hero } from "@/components/sections/Hero";
+import { Projects } from "@/components/sections/Projects";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 // Section shells so the menu has scroll targets. Each one gets its real
 // component in later build steps (see CLAUDE.md §3 and §10 build order).
 const shells = [
-  { id: "projects", label: "Selected projects", title: "Projects" },
   { id: "about", label: "About me", title: "About" },
   { id: "stack", label: "My stack", title: "Stack" },
   { id: "experience", label: "Experience", title: "Where I've worked" },
@@ -15,6 +15,7 @@ export default function Home() {
   return (
     <main id="main">
       <Hero />
+      <Projects />
 
       {shells.map((s) => (
         <section

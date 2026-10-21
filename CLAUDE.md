@@ -71,6 +71,8 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 
 ### `projects.ts`
 
+The full page copy lives in `src/data/projects.ts`, written from each repo's README and commit history (checked 2026-10-21). The repos are the source of truth for technical facts and supersede older résumé figures; the notes below are the summary.
+
 **01 — Modulos** `slug: modulos` (formerly **PayoffPal** — renamed Oct 2026)
 - Tags: TypeScript, React, AWS Amplify, Cognito, AppSync, DynamoDB, Lambda, Plaid
 - Personal debt-management companion: enter (or import from your bank) income, expenses, and loans; get a debt-to-income affordability check for a new loan; build an avalanche payoff plan (highest APR first) with an interactive extra-payment timeline.
@@ -97,23 +99,23 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
   - `modulos-payoff-chart.webp` — payoff timeline + per-loan schedules
 - Sri approved being named and linked.
 
-**02 — OrbitTrack** `slug: orbittrack`
-- Tags: Python, Skyfield, FastAPI, pytest, GitHub Actions, Render
+**02 — OrbitTrack** `slug: orbittrack` — solo project (all commits are Aadi's)
+- Tags: Python, Skyfield, FastAPI, pytest, mypy, GitHub Actions, Render
 - Live: https://orbittrack-dpeo.onrender.com/ · Source: https://github.com/Xenon757/Orbittrack
-- What it does: predicts satellite passes for any ground station (including weather and amateur-radio satellites) by propagating CelesTrak TLEs with SGP4 — rise, peak, and set times, look angles, and ground tracks. FastAPI web app plus documented JSON API.
-- Hardening: request validation, input allowlist against path traversal, HTML escaping, lock-protected shared cache.
-- Testing: 123 offline pytest unit/integration tests using fixed fixtures and FastAPI dependency overrides; pass times cross-checked against independent brute-force sampling to within half a second.
-- Ops story (great for "How it works"): production outage where the host timed out reaching CelesTrak → fixed with a GitHub Actions workflow that mirrors TLE data every 6 hours plus a 5-minute retry back-off.
-- If `docs/orbittrack-brief.md` exists, it overrides everything here.
-- Note on page: Render free tier may take ~30s to wake on first load.
+- What it does: predicts satellite passes for any ground station (six CelesTrak groups incl. weather and amateur radio) by propagating TLEs with SGP4 via Skyfield — rise/peak/set times, look angles, polar sky plot, ground-track map, live predicted position. FastAPI web app, JSON API, and a CLI with multi-satellite/multi-station contact scheduling. Accuracy check against NASA's ISS ephemeris.
+- Hardening: group allowlist (path traversal / request spam), range-checked params (422), 72 h window cap, HTML escaping, lock-protected shared TLE cache.
+- Testing: **135** offline tests (README; the older résumé said 123). Brute-force cross-check (2 s sampling over 48 h) agrees on pass count with times **within 3 s**. "Within half a second" is the precision of Skyfield's event finder, **not** the cross-check — don't conflate them.
+- Ops story: Render → CelesTrak requests timed out in production → GitHub Actions mirrors the six groups to GitHub Pages every 6 h; 5-minute retry back-off with immediate 503.
+- Render free tier: first load can take up to about a minute to wake.
 
 **03 — SignMeUp** `slug: signmeup`
-- Tags: Python, Flask, React, JavaScript, Whisper, Stanza, pytest
-- Live: https://signmeup.fly.dev/ · Source: https://github.com/Xenon757/SignMeUp (fork of ShlokShar/SignMeUp)
-- **Won 3rd place at HelloWorld**, Purdue's largest hackathon for freshmen. Team project — credit the original team and link the original repo.
-- What it does: live ASL subtitles for YouTube videos. A Flask/Python pipeline transcribes video with Whisper and uses Stanza parsing to convert speech into ASL signs from an ASL database, shown through a React frontend.
-- Aadi's post-hackathon work in his fork: fixed a path-traversal vulnerability (uploaded filenames used as file paths); added upload size/type limits, random storage names, and automatic cleanup; restructured the pipeline into testable modules; wrote 25 offline pytest tests including a regression test for the fix.
-- What's next: better sign media.
+- Tags: Python, Flask, Whisper, Stanza, MediaPipe, React, TypeScript, pytest, Fly.io
+- Live: https://signmeup.fly.dev/ · Source: https://github.com/Xenon757/SignMeUp (fork of ShlokShar/SignMeUp) · Devpost: https://devpost.com/software/signmeup-the-asl-subtitle
+- **Won 3rd place at HelloWorld 2025**, Purdue's largest hackathon for freshmen. Team project — credit the original team and link the original repo and Devpost. TODO (ask Aadi): teammates' names.
+- At the hackathon: Flask pipeline transcribing with Whisper and converting speech into ASL signs with Stanza parsing.
+- Since the hackathon, all work in the fork is Aadi's (82 commits, Sep 2025 – Oct 2026): upload video/audio → Whisper with word timestamps → ASL grammar rules → 2D animated signer built from ASL Signbank videos with MediaPipe, timed to speech; React + TypeScript frontend; demo page ("Me at the zoo" in YouTube's player) and compare page; path-traversal fix + upload hardening with regression test; Docker + Fly.io + GitHub Actions CI/CD. **130** Python + **11** frontend tests (the older résumé said 25).
+- Don't use frames of the YouTube demo video in screenshots (third-party video showing a real person).
+- What's next: TODO (ask Aadi) — "better sign media" is largely addressed by the Signbank animations.
 
 ### `experience.ts`
 

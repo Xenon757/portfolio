@@ -21,6 +21,7 @@ const body = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
     default: `${site.name} — ${site.title}`,
     template: `%s — ${site.name}`,

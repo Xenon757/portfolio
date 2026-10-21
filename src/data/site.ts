@@ -1,4 +1,14 @@
+// Absolute site URL for metadata (Open Graph images, sitemap). Uses
+// NEXT_PUBLIC_SITE_URL if set, else Vercel's production domain, else localhost.
+// TODO: set NEXT_PUBLIC_SITE_URL once Aadi picks a custom domain.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
+
 export const site = {
+  url: siteUrl,
   name: "Aadi Belwal",
   title: "Software Engineer",
   description:
