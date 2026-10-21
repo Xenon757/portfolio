@@ -10,3 +10,19 @@ export const site = {
   resume: "/resume.pdf",
   status: "Open to Summer 2027 internships",
 } as const;
+
+/** Home-page sections, in page order. `id` is the section's DOM id. */
+export const nav = [
+  { id: "top", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "stack", label: "Stack" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+] as const;
+
+export const socials = [
+  { label: "GitHub", href: site.github },
+  { label: "LinkedIn", href: site.linkedin },
+  { label: "Résumé", href: site.resume },
+] as const;

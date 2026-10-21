@@ -34,6 +34,20 @@
 
 html {
   color-scheme: dark;
+  /* Keeps layout from shifting when the menu locks scrolling. */
+  scrollbar-gutter: stable;
+}
+
+/* Lenis' recommended base styles. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
 body {
