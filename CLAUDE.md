@@ -180,6 +180,7 @@ Use official SVG logos where available; text-only chip as fallback.
 
 - Register GSAP plugins once in `src/lib/gsap.ts`; import from there.
 - Use `useGSAP` with a scoped container ref so animations clean up on unmount/route change.
+- **Sections are server components.** Animations live in small client components in `src/components/motion/` that attach GSAP to the server-rendered section by its id (`useSectionMotion` in `src/lib/motion.ts`). Don't make a whole section `"use client"` just to animate it: hydrating the full page cost ~500 ms of blocking time on mobile.
 - Lenis lives in a single client provider (`src/components/providers/SmoothScroll.tsx`) and drives `ScrollTrigger.update` on scroll.
 - **Respect `prefers-reduced-motion`:** disable Lenis and skip/shorten all GSAP animations; content must be fully visible without JS animation.
 - Animate only `transform` and `opacity`.
@@ -201,6 +202,7 @@ src/
     sections/            # Hero (incl. stats), Projects, About, Stack, Experience, Contact
     ui/                  # Button, Tag, Counter, SectionHeading, Menu
     providers/           # SmoothScroll
+    motion/              # client components that animate server-rendered sections
   data/                  # site.ts, projects.ts, experience.ts, stack.ts
   lib/                   # gsap.ts, utils.ts
 public/
