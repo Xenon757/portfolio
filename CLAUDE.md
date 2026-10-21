@@ -128,7 +128,7 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 
 **Bazar Earth** — Full Stack Engineer Intern · Palo Alto, CA · Sep 2024 – Sep 2025
 - Website: https://bazar.earth/ — link the company name to it in the Experience list. It's the company's product, built by a team; Aadi contributed features as an intern. Keep it under Experience only (not Selected Projects), and never phrase it as something he built himself.
-- Built backend features in Python (Django) and frontend features in React for a SaaS web app.
+- Built backend features in Python (Django) and frontend features in React for an e-commerce web app.
 - Redesigned search with PostgreSQL trigram similarity, cutting query time from 3s to 180ms.
 - Improved mobile usability by fixing overlapping controls, broken spacing, and off-viewport elements.
 
