@@ -4,10 +4,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 // Section shells so the menu has scroll targets. Each one gets its real
 // component in later build steps (see CLAUDE.md §3 and §10 build order).
 const shells = [
+  { id: "projects", label: "Selected projects", title: "Projects" },
   { id: "about", label: "About me", title: "About" },
   { id: "stack", label: "My stack", title: "Stack" },
   { id: "experience", label: "Experience", title: "Where I've worked" },
-  { id: "projects", label: "Selected projects", title: "Projects" },
   { id: "contact", label: "Contact", title: "Get in touch" },
 ];
 

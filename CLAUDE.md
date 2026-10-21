@@ -35,17 +35,17 @@ Don't add Redux, a CMS, a database, or a UI kit — content is static and lives 
 ## 3. Site structure
 
 ### Home (`/`) — sections in order
-1. **Hero** — "SOFTWARE ENGINEER" headline (huge, uppercase), one-line intro, CTA buttons (Email / GitHub / LinkedIn / Résumé), small status pill ("Open to Summer 2027 internships"). Staggered text reveal on load.
-2. **Stats row** — 3 counters that animate up on scroll. Use these (all from the résumé):
+Projects come right after the hero (decided with Aadi): recruiters already have the résumé, so the site's unique value is the projects. Experience stays, but lower and compact.
+
+1. **Hero** — "SOFTWARE ENGINEER" headline (huge, uppercase), one-line intro, CTA buttons (Email / GitHub / LinkedIn / Résumé), small status pill ("Open to Summer 2027 internships"), and a "View projects" link to `#projects`. Staggered text reveal on load. **Stats live inside the hero** (right column on desktop, a row on mobile) and count up as it reveals. Use these (all from the résumé):
    - `4` — Software internships
    - `100` — Students in the Python program he led
    - `3rd` — Place at Purdue HelloWorld hackathon
+2. **Selected Projects** — numbered list (`_01.`, `_02.`, `_03.`) with project name + tech tags; on desktop, hovering a row shows a floating thumbnail that follows the cursor. Each row links to `/projects/[slug]`.
 3. **About** — short paragraph + a large statement line that reveals word-by-word on scroll. Draft from the résumé summary: backend, cloud, and production systems; hardening and deploying public web services; teaching background.
 4. **Stack** — grouped logo grid (see `stack.ts` in §4).
-5. **Experience** — vertical list: company, role, dates, location, 1–3 bullets (expandable on click). Lines draw in on scroll.
-6. **Selected Projects** — numbered list (`_01.`, `_02.`, `_03.`) with project name + tech tags; on desktop, hovering a row shows a floating thumbnail that follows the cursor. Each row links to `/projects/[slug]`.
-7. **Leadership** — small Sewa International block (can be merged into Experience as a "Volunteer" entry).
-8. **Contact / Footer** — big "Have an opportunity in mind?" + email, socials, "Designed & built by Aadi Belwal".
+5. **Experience** — compact vertical list: company, role, dates, location, 1–3 bullets (expandable on click). Lines draw in on scroll. Sewa International is included as a "Volunteer" entry.
+6. **Contact / Footer** — big "Have an opportunity in mind?" + email, socials, "Designed & built by Aadi Belwal".
 
 ### Sticky menu
 Hamburger (top-right) opening a full-screen overlay with Social / Menu / Get in touch columns. Menu links smooth-scroll to sections via Lenis.
@@ -193,7 +193,7 @@ src/
     not-found.tsx
     sitemap.ts, robots.ts
   components/
-    sections/            # Hero, Stats, About, Stack, Experience, Projects, Contact
+    sections/            # Hero (incl. stats), Projects, About, Stack, Experience, Contact
     ui/                  # Button, Tag, Counter, SectionHeading, Menu
     providers/           # SmoothScroll
   data/                  # site.ts, projects.ts, experience.ts, stack.ts
@@ -236,5 +236,5 @@ pnpm lint       # eslint
 - Small, focused commits with clear messages (`feat: add projects section hover preview`).
 - Don't push or deploy without Aadi's go-ahead.
 - Don't add new dependencies beyond §2 without asking.
-- Build order: scaffold + design tokens → layout/menu/Lenis → Hero → Projects (+ detail pages) → Experience/Stack/About → Contact → polish/animations → SEO/Lighthouse pass.
+- Build order: scaffold + design tokens → layout/menu/Lenis → Hero → Projects (+ detail pages) → About/Stack/Experience → Contact → polish/animations → SEO/Lighthouse pass.
 - At the end of each work session, list any remaining `TODO:` items that need Aadi's input.

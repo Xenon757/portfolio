@@ -17,11 +17,18 @@ export const site = {
 /** Home-page sections, in page order. `id` is the section's DOM id. */
 export const nav = [
   { id: "top", label: "Home" },
+  { id: "projects", label: "Projects" },
   { id: "about", label: "About" },
   { id: "stack", label: "Stack" },
   { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
+] as const;
+
+/** Hero counters — all from the résumé. */
+export const stats = [
+  { value: 4, suffix: "", label: "Software internships" },
+  { value: 100, suffix: "", label: "Students in the Python program I led" },
+  { value: 3, suffix: "rd", label: "Place at Purdue's HelloWorld hackathon" },
 ] as const;
 
 export const socials = [
