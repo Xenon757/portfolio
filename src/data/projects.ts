@@ -34,6 +34,8 @@ export type Project = {
   role: string[];
   /** Hidden when empty. */
   next: string[];
+  /** Heading for `next` (default "What's next"). */
+  nextTitle?: string;
 };
 
 export const projects: Project[] = [
@@ -103,8 +105,8 @@ export const projects: Project[] = [
       "Rebuilt the backend on AWS Amplify (Cognito, AppSync, DynamoDB, Lambda) and built the Plaid bank integration.",
       "Added the privacy policy, sign-up consent, and search-engine basics (robots.txt, sitemap).",
     ],
-    // TODO: ask Aadi what's next for Modulos.
-    next: [],
+    // Aadi: still in development, no specific roadmap to list.
+    next: ["Modulos is still in development. You can try it without an account in guest mode at modulos.app."],
   },
   {
     slug: "orbittrack",
@@ -164,7 +166,8 @@ export const projects: Project[] = [
       },
     ],
     role: ["Solo project: I designed, built, tested, and deployed it."],
-    // From the README's limitations. TODO: confirm with Aadi these are what he'd do next.
+    // Confirmed by Aadi (Oct 2026): already working on these.
+    nextTitle: "What I'm working on",
     next: [
       "Bring multi-satellite contact scheduling from the CLI to the web app.",
       "Compare more TLEs against successive NASA ephemerides to measure how accuracy falls off with TLE age.",

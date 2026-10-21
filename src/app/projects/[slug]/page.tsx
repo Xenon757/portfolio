@@ -185,7 +185,7 @@ export default async function ProjectPage({ params }: Props) {
         </Section>
 
         {project.next.length > 0 && (
-          <Section n={step()} title="What's next">
+          <Section n={step()} title={project.nextTitle ?? "What's next"}>
             <Bullets items={project.next} />
           </Section>
         )}

@@ -98,6 +98,7 @@ The full page copy lives in `src/data/projects.ts`, written from each repo's REA
   - `modulos-dashboard.webp` — dashboard; its income vs. expenses chart is Sri's work, so caption it neutrally
   - `modulos-payoff-chart.webp` — payoff timeline + per-loan schedules
 - Sri approved being named and linked.
+- What's next: just "still in development" (no roadmap to list, per Aadi).
 
 **02 — OrbitTrack** `slug: orbittrack` — solo project (all commits are Aadi's)
 - Tags: Python, Skyfield, FastAPI, pytest, mypy, GitHub Actions, Render
@@ -107,6 +108,7 @@ The full page copy lives in `src/data/projects.ts`, written from each repo's REA
 - Testing: **135** offline tests (README; the older résumé said 123). Brute-force cross-check (2 s sampling over 48 h) agrees on pass count with times **within 3 s**. "Within half a second" is the precision of Skyfield's event finder, **not** the cross-check — don't conflate them.
 - Ops story: Render → CelesTrak requests timed out in production → GitHub Actions mirrors the six groups to GitHub Pages every 6 h; 5-minute retry back-off with immediate 503.
 - Render free tier: first load can take up to about a minute to wake.
+- What's next (confirmed by Aadi, already in progress): multi-satellite scheduling in the web app, accuracy vs. TLE age across successive NASA ephemerides, atmospheric refraction + priority-aware scheduling.
 
 **03 — SignMeUp** `slug: signmeup`
 - Tags: Python, Flask, Whisper, Stanza, MediaPipe, React, TypeScript, pytest, Fly.io
