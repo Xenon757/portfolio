@@ -42,7 +42,7 @@ Projects come right after the hero (decided with Aadi): recruiters already have 
    - `100+` — Students in the Python program he led (confirmed by Aadi)
    - `3rd` — Place at Purdue's largest freshman hackathon (HelloWorld)
 2. **Selected Projects** — numbered list (`_01.`, `_02.`, `_03.`) with project name + tech tags; on desktop, hovering a row shows a floating thumbnail that follows the cursor. Each row links to `/projects/[slug]`.
-3. **About** — short paragraph + a large statement line that reveals word-by-word on scroll. Draft from the résumé summary: backend, cloud, and production systems; hardening and deploying public web services; teaching background.
+3. **About** — short paragraph + a large statement line that reveals word-by-word on scroll. Draft from the résumé summary: backend, cloud, and production systems; hardening and deploying public web services; teaching background. Don't mention StatusGo in About — Aadi just started there (it stays in Experience).
 4. **Stack** — grouped logo grid (see `stack.ts` in §4).
 5. **Experience** — compact vertical list: company, role, dates, location, 1–3 bullets (expandable on click). Lines draw in on scroll. Sewa International is included as a "Volunteer" entry.
 6. **Contact / Footer** — big "Have an opportunity in mind?" + email, socials, "Designed & built by Aadi Belwal".
