@@ -39,8 +39,8 @@ Projects come right after the hero (decided with Aadi): recruiters already have 
 
 1. **Hero** — "SOFTWARE ENGINEER" headline (huge, uppercase), one-line intro, CTA buttons (Email / GitHub / LinkedIn / Résumé), small status pill ("Open to Summer 2027 internships"), and a "View projects" link to `#projects`. Staggered text reveal on load. **Stats live inside the hero** (right column on desktop, a row on mobile) and count up as it reveals. Use these (all from the résumé):
    - `4` — Software internships
-   - `100` — Students in the Python program he led
-   - `3rd` — Place at Purdue HelloWorld hackathon
+   - `100+` — Students in the Python program he led (confirmed by Aadi)
+   - `3rd` — Place at Purdue's largest freshman hackathon (HelloWorld)
 2. **Selected Projects** — numbered list (`_01.`, `_02.`, `_03.`) with project name + tech tags; on desktop, hovering a row shows a floating thumbnail that follows the cursor. Each row links to `/projects/[slug]`.
 3. **About** — short paragraph + a large statement line that reveals word-by-word on scroll. Draft from the résumé summary: backend, cloud, and production systems; hardening and deploying public web services; teaching background.
 4. **Stack** — grouped logo grid (see `stack.ts` in §4).
@@ -138,7 +138,7 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 - Mentored a new team member on ChanceCalc's design as they contributed to the calculator.
 
 **Sewa International** — Python Teacher Lead (Volunteer) · Oct 2021 – Aug 2024
-- Led a Python program for 100 K–8 students: designed the curriculum, managed volunteer teachers, built aptitude assessments, and matched students to teachers.
+- Led a Python program for 100+ K–8 students: designed the curriculum, managed volunteer teachers, built aptitude assessments, and matched students to teachers.
 - Redesigned the curriculum for online classes during COVID.
 - Also taught 2nd grade math, reading, writing, science, and art.
 

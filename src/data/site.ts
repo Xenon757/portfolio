@@ -27,8 +27,8 @@ export const nav = [
 /** Hero counters — all from the résumé. */
 export const stats = [
   { value: 4, suffix: "", label: "Software internships" },
-  { value: 100, suffix: "", label: "Students in the Python program I led" },
-  { value: 3, suffix: "rd", label: "Place at Purdue's HelloWorld hackathon" },
+  { value: 100, suffix: "+", label: "Students in the Python program I led" },
+  { value: 3, suffix: "rd", label: "Place at Purdue's largest freshman hackathon" },
 ] as const;
 
 export const socials = [
