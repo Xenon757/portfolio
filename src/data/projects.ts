@@ -39,75 +39,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  {
-    slug: "modulos",
-    name: "Modulos",
-    tagline:
-      "A personal debt-management companion: check whether a new loan is affordable and plan the fastest way out of debt.",
-    tags: ["TypeScript", "React", "AWS Amplify", "Cognito", "AppSync", "DynamoDB", "Lambda", "Plaid"],
-    status: "in-progress",
-    live: "https://www.modulos.app/",
-    source: "https://github.com/sri-meduri/modulos",
-    team: "Team project with Sri Meduri. Sri came up with the idea, runs marketing, and built the 12-month income vs. expenses chart. I built the app and its backend.",
-    links: [{ label: "Sri on GitHub", href: "https://github.com/sri-meduri" }],
-    thumbnail: {
-      src: "/projects/modulos-thumb.webp",
-      alt: "Modulos payoff plan: with $400 extra a month, debt-free in 2 years 9 months instead of 4 years 3 months, saving $3,630 in interest.",
-    },
-    images: [
-      {
-        src: "/projects/modulos-payoff-chart.webp",
-        alt: "Modulos payoff timeline bar chart and per-loan payoff schedules for a credit card, auto loan, and student loan.",
-        caption: "Avalanche payoff timeline and per-loan schedules (sample data).",
-      },
-      {
-        src: "/projects/modulos-dashboard.webp",
-        alt: "Modulos dashboard with a 12-month income and expenses chart and summary cards.",
-        caption: "The dashboard (sample data).",
-      },
-      {
-        src: "/projects/modulos-landing.webp",
-        alt: "Modulos landing page: Take Control of Your Loans.",
-        caption: "Landing page.",
-      },
-    ],
-    problem: [
-      "People juggling several loans often can't tell whether a new loan is actually affordable, or which debt to pay down first. Most tools that help either require a bank login or try to sell refinancing.",
-      "Modulos answers both questions in a couple of minutes, with or without connecting a bank.",
-    ],
-    built: [
-      "An affordability check that computes debt-to-income ratio against conservative, moderate, or aggressive thresholds and returns a clear Safe / Not recommended answer.",
-      "An avalanche payoff planner that orders loans by APR, projects the payoff date and interest saved, and lets you drag an extra-payment slider to see the difference.",
-      "Take-home pay from gross income: federal, state, and local income tax, FICA, 401(k), and other pre-tax deductions.",
-      "Optional bank connection through Plaid that imports loans, recurring expenses, and 12 months of income vs. expense history.",
-      "Accounts with email or Google sign-in, plus a guest mode that keeps everything in the browser.",
-    ],
-    how: [
-      {
-        title: "A serverless backend on AWS",
-        body: "I rebuilt the app on AWS Amplify Gen 2: Cognito handles email/password and Google sign-in, an AppSync API on DynamoDB stores each user's finances with owner-based authorization, and Amplify's pipeline deploys the backend and frontend together.",
-      },
-      {
-        title: "Bank tokens never reach the browser",
-        body: "Plaid access tokens live in a separate DynamoDB table that only the Plaid Lambda function has IAM access to, so there's no API path to them at all. The browser only sees connection metadata. OAuth redirect URLs are checked against an allowlist, and sandbox and production Plaid environments are kept apart.",
-      },
-      {
-        title: "Making bank sync hold up on real accounts",
-        body: "Real bank logins broke the happy path, so sync now handles banks with no loan accounts, detects subscriptions from raw transactions when Plaid's recurring-transactions API isn't available, counts Zelle and Venmo payments as cash flow while ignoring transfers between your own accounts, and retries until a new connection's history arrives.",
-      },
-      {
-        title: "Failing loudly instead of silently",
-        body: "AppSync reports rejected writes in an errors array instead of throwing, so a failed save looked like a success. Saves now surface errors to the user, and values are cleaned into strict JSON (no NaN or undefined) before they're sent.",
-      },
-    ],
-    role: [
-      "Built the original app: the interface and the financial logic — avalanche payoff math, the debt-to-income affordability check, and the take-home pay calculation.",
-      "Rebuilt the backend on AWS Amplify (Cognito, AppSync, DynamoDB, Lambda) and built the Plaid bank integration.",
-      "Added the privacy policy, sign-up consent, and search-engine basics (robots.txt, sitemap).",
-    ],
-    // Aadi: still in development, no specific roadmap to list.
-    next: ["Modulos is still in development. You can try it without an account in guest mode at modulos.app."],
-  },
+  // Order matters: finished, live projects first; in-progress Modulos last (Aadi's call).
   {
     slug: "orbittrack",
     name: "OrbitTrack",
@@ -237,6 +169,75 @@ export const projects: Project[] = [
     ],
     // TODO: ask Aadi what's next (CLAUDE.md previously said "better sign media", which the Signbank animations now address).
     next: [],
+  },
+  {
+    slug: "modulos",
+    name: "Modulos",
+    tagline:
+      "A personal debt-management companion: check whether a new loan is affordable and plan the fastest way out of debt.",
+    tags: ["TypeScript", "React", "AWS Amplify", "Cognito", "AppSync", "DynamoDB", "Lambda", "Plaid"],
+    status: "in-progress",
+    live: "https://www.modulos.app/",
+    source: "https://github.com/sri-meduri/modulos",
+    team: "Team project with Sri Meduri. Sri came up with the idea, runs marketing, and built the 12-month income vs. expenses chart. I built the app and its backend.",
+    links: [{ label: "Sri on GitHub", href: "https://github.com/sri-meduri" }],
+    thumbnail: {
+      src: "/projects/modulos-thumb.webp",
+      alt: "Modulos payoff plan: with $400 extra a month, debt-free in 2 years 9 months instead of 4 years 3 months, saving $3,630 in interest.",
+    },
+    images: [
+      {
+        src: "/projects/modulos-payoff-chart.webp",
+        alt: "Modulos payoff timeline bar chart and per-loan payoff schedules for a credit card, auto loan, and student loan.",
+        caption: "Avalanche payoff timeline and per-loan schedules (sample data).",
+      },
+      {
+        src: "/projects/modulos-dashboard.webp",
+        alt: "Modulos dashboard with a 12-month income and expenses chart and summary cards.",
+        caption: "The dashboard (sample data).",
+      },
+      {
+        src: "/projects/modulos-landing.webp",
+        alt: "Modulos landing page: Take Control of Your Loans.",
+        caption: "Landing page.",
+      },
+    ],
+    problem: [
+      "People juggling several loans often can't tell whether a new loan is actually affordable, or which debt to pay down first. Most tools that help either require a bank login or try to sell refinancing.",
+      "Modulos answers both questions in a couple of minutes, with or without connecting a bank.",
+    ],
+    built: [
+      "An affordability check that computes debt-to-income ratio against conservative, moderate, or aggressive thresholds and returns a clear Safe / Not recommended answer.",
+      "An avalanche payoff planner that orders loans by APR, projects the payoff date and interest saved, and lets you drag an extra-payment slider to see the difference.",
+      "Take-home pay from gross income: federal, state, and local income tax, FICA, 401(k), and other pre-tax deductions.",
+      "Optional bank connection through Plaid that imports loans, recurring expenses, and 12 months of income vs. expense history.",
+      "Accounts with email or Google sign-in, plus a guest mode that keeps everything in the browser.",
+    ],
+    how: [
+      {
+        title: "A serverless backend on AWS",
+        body: "I rebuilt the app on AWS Amplify Gen 2: Cognito handles email/password and Google sign-in, an AppSync API on DynamoDB stores each user's finances with owner-based authorization, and Amplify's pipeline deploys the backend and frontend together.",
+      },
+      {
+        title: "Bank tokens never reach the browser",
+        body: "Plaid access tokens live in a separate DynamoDB table that only the Plaid Lambda function has IAM access to, so there's no API path to them at all. The browser only sees connection metadata. OAuth redirect URLs are checked against an allowlist, and sandbox and production Plaid environments are kept apart.",
+      },
+      {
+        title: "Making bank sync hold up on real accounts",
+        body: "Real bank logins broke the happy path, so sync now handles banks with no loan accounts, detects subscriptions from raw transactions when Plaid's recurring-transactions API isn't available, counts Zelle and Venmo payments as cash flow while ignoring transfers between your own accounts, and retries until a new connection's history arrives.",
+      },
+      {
+        title: "Failing loudly instead of silently",
+        body: "AppSync reports rejected writes in an errors array instead of throwing, so a failed save looked like a success. Saves now surface errors to the user, and values are cleaned into strict JSON (no NaN or undefined) before they're sent.",
+      },
+    ],
+    role: [
+      "Built the original app: the interface and the financial logic — avalanche payoff math, the debt-to-income affordability check, and the take-home pay calculation.",
+      "Rebuilt the backend on AWS Amplify (Cognito, AppSync, DynamoDB, Lambda) and built the Plaid bank integration.",
+      "Added the privacy policy, sign-up consent, and search-engine basics (robots.txt, sitemap).",
+    ],
+    // Aadi: still in development, no specific roadmap to list.
+    next: ["Modulos is still in development. You can try it without an account in guest mode at modulos.app."],
   },
 ];
 
