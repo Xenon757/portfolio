@@ -82,7 +82,7 @@ export function Intro() {
           <div
             key={i}
             data-intro-col
-            className={`h-full flex-1 border-t-2 border-r border-t-accent border-r-black/40 bg-intro-col last:border-r-0 ${
+            className={`h-full flex-1 border-t-2 border-r border-t-accent border-r-white/[0.06] bg-intro-col last:border-r-0 ${
               i >= 5 ? "hidden md:block" : ""
             }`}
           />

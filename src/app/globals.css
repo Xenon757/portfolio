@@ -6,12 +6,12 @@
  * in the @theme block below (bg-bg, text-fg, text-muted, text-accent, ...).
  */
 :root {
-  --bg: #0b0b0c;
-  --bg-elevated: #151517;
+  --bg: #1f1f21;
+  --bg-elevated: #29292c;
   --fg: #ecebe6;
-  --muted: #8b8a85;
-  --line: #2a2a2d;
-  --intro-col: #222225;
+  --muted: #9a9993;
+  --line: #38383c;
+  --intro-col: #0b0b0c;
   --accent: #ff5c39;
   --accent-fg: #0b0b0c;
 }
