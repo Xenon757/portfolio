@@ -90,7 +90,12 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 - Frontend: React 19, Vite, Tailwind, Recharts, React Router.
 - "My role" must describe only Aadi's engineering work — don't credit him with the idea, marketing, or Sri's income vs. expenses chart.
 - Don't claim users, real-bank production status, or launch — it's in development.
-- TODO (ask Aadi): screenshots; confirm Sri is OK being named and linked.
+- Screenshots in `public/projects/` (taken from guest mode with fictional sample data — not real user data):
+  - `modulos-thumb.webp` — payoff plan with extra-payment simulation (Aadi's payoff math)
+  - `modulos-landing.webp` — landing page hero
+  - `modulos-dashboard.webp` — dashboard; its income vs. expenses chart is Sri's work, so caption it neutrally
+  - `modulos-payoff-chart.webp` — payoff timeline + per-loan schedules
+- TODO (ask Aadi): confirm Sri is OK being named and linked.
 
 **02 — OrbitTrack** `slug: orbittrack`
 - Tags: Python, Skyfield, FastAPI, pytest, GitHub Actions, Render
