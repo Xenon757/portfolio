@@ -6,6 +6,7 @@ import { GitHubIcon, LinkedInIcon } from "@/components/ui/BrandIcons";
 import { Button } from "@/components/ui/Button";
 import { site } from "@/data/site";
 import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap";
+import { whenIntroRevealed } from "@/lib/intro";
 
 const headline = ["Software", "Engineer"];
 
@@ -19,12 +20,14 @@ export function Hero() {
         gsap.set(content, { visibility: "visible" });
         return;
       }
-      gsap
-        .timeline({ defaults: { ease: "power4.out" } })
+      const tl = gsap
+        .timeline({ paused: true, defaults: { ease: "power4.out" } })
         .from("[data-hero-line]", { yPercent: 110, duration: 1.1, stagger: 0.12 })
         .from("[data-hero-fade]", { y: 24, opacity: 0, duration: 0.8, stagger: 0.08 }, "-=0.75");
       // The "from" states above are applied synchronously, so it's safe to un-hide now.
       gsap.set(content, { visibility: "visible" });
+      // On a first visit, start as the intro uncovers the page.
+      return whenIntroRevealed(() => tl.play());
     },
     { scope: ref },
   );

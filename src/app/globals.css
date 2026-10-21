@@ -42,6 +42,9 @@ html {
 .js-anim [data-hero] {
   visibility: hidden;
 }
+.intro [data-intro] {
+  display: block;
+}
 
 /* Lenis' recommended base styles. */
 html.lenis,
