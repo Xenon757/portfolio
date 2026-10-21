@@ -78,9 +78,9 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 - Status: **In development** — show an "In progress" badge.
 - Team project with **Sri Meduri** (github.com/sri-meduri, owns the repo). Credit Sri on the project page.
   - Sri: came up with the idea; handles marketing; also built the 12-month income vs. expenses chart.
-  - Aadi: built the original interface and the payoff math, then rebuilt the backend on AWS and built the bank integration (details below).
+  - Aadi: built the original interface and the financial math, then rebuilt the backend on AWS and built the bank integration (details below).
 - Aadi's work (confirmed by Aadi; backend items from his commits, Jul 2026):
-  - Built the original app (as PayoffPal): the original interface and the avalanche payoff math. TODO (ask Aadi): did he also build the debt-to-income affordability check and the gross→net tax calculation? Don't claim them until confirmed.
+  - Built the original app (as PayoffPal): the original interface and the financial logic — avalanche payoff math, the debt-to-income affordability check with risk profiles, and the gross→net take-home pay (tax) calculation.
   - Rebuilt the app on **AWS Amplify Gen 2**: Cognito auth (email/password + Google sign-in), AppSync + DynamoDB data models scoped per user with owner-based authorization, deployed through Amplify's CI pipeline.
   - **Plaid bank integration** via a Lambda function: link-token creation, public-token exchange, sync of loans/expenses/12-month income-vs-expense history, and disconnect.
   - Security design: Plaid access tokens stored in a separate DynamoDB table that only the Lambda has IAM access to — no API path from the browser; OAuth redirect URLs validated against an allowlist; sandbox/production Plaid environment split.
@@ -95,7 +95,7 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
   - `modulos-landing.webp` — landing page hero
   - `modulos-dashboard.webp` — dashboard; its income vs. expenses chart is Sri's work, so caption it neutrally
   - `modulos-payoff-chart.webp` — payoff timeline + per-loan schedules
-- TODO (ask Aadi): confirm Sri is OK being named and linked.
+- Sri approved being named and linked.
 
 **02 — OrbitTrack** `slug: orbittrack`
 - Tags: Python, Skyfield, FastAPI, pytest, GitHub Actions, Render
