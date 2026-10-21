@@ -13,11 +13,15 @@ export type Experience = {
   /** Omitted when not on the résumé. */
   location?: string;
   bullets: string[];
+  /** Kept in the data but not shown on the site. */
+  hidden?: boolean;
 };
 
-export const experience: Experience[] = [
+export const allExperience: Experience[] = [
   {
     company: "StatusGo",
+    // Aadi just started here — hidden from the site for now (Oct 2026). Flip to show it.
+    hidden: true,
     role: "Software Engineer Intern",
     start: "Sep 2026",
     end: "Present",
@@ -77,3 +81,5 @@ export const experience: Experience[] = [
     ],
   },
 ];
+
+export const experience = allExperience.filter((e) => !e.hidden);

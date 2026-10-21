@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
 import { Stack } from "@/components/sections/Stack";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { experience } from "@/data/experience";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <Projects />
       <About />
       <Stack />
-      <Experience />
+      <Experience items={experience} />
 
       {/* Contact shell until the Contact/Footer step (CLAUDE.md §10 build order). */}
       <section

@@ -3,13 +3,14 @@
 import { ArrowUpRight, Plus } from "lucide-react";
 import { useRef, useState } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { experience } from "@/data/experience";
+import type { Experience as Job } from "@/data/experience";
 import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 
-export function Experience() {
+// Takes the list as a prop (from the server page) so hidden entries never ship to the browser.
+export function Experience({ items }: { items: Job[] }) {
   const ref = useRef<HTMLElement>(null);
-  // The current role starts open; the rest are one click away.
+  // The most recent role starts open; the rest are one click away.
   const [open, setOpen] = useState<Set<number>>(() => new Set([0]));
 
   const toggle = (i: number) =>
@@ -56,7 +57,7 @@ export function Experience() {
       <SectionHeading id="experience-heading" label="Experience" title="Where I've worked" />
 
       <ol>
-        {experience.map((job, i) => {
+        {items.map((job, i) => {
           const isOpen = open.has(i);
           const panelId = `exp-panel-${i}`;
           return (
