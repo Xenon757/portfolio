@@ -35,7 +35,7 @@ Don't add Redux, a CMS, a database, or a UI kit — content is static and lives 
 ## 3. Site structure
 
 ### Home (`/`) — sections in order
-1. **Hero** — "SOFTWARE ENGINEER" headline (huge, uppercase), one-line intro, CTA buttons (Email / GitHub / LinkedIn / Résumé), small status pill (text: TODO — confirm with Aadi). Staggered text reveal on load.
+1. **Hero** — "SOFTWARE ENGINEER" headline (huge, uppercase), one-line intro, CTA buttons (Email / GitHub / LinkedIn / Résumé), small status pill ("Open to Summer 2027 internships"). Staggered text reveal on load.
 2. **Stats row** — 3 counters that animate up on scroll. Use these (all from the résumé):
    - `4` — Software internships
    - `100` — Students in the Python program he led
@@ -65,8 +65,9 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 - GitHub: https://github.com/Xenon757
 - LinkedIn: https://linkedin.com/in/aadi-belwal
 - Location: Palo Alto, CA / West Lafayette, IN
-- Résumé: `public/resume.pdf` (TODO: Aadi to provide the general-SWE version)
-- **Never put his phone number on the site.**
+- Résumé: `public/resume.pdf` (Aadi's SWE-intern version). It includes his phone number — Aadi approved that.
+- Status: "Open to Summer 2027 internships"
+- **Don't put his phone number anywhere else** — not in page copy, data files, or metadata.
 
 ### `projects.ts`
 

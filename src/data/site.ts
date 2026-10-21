@@ -7,6 +7,6 @@ export const site = {
   github: "https://github.com/Xenon757",
   linkedin: "https://linkedin.com/in/aadi-belwal",
   location: "Palo Alto, CA / West Lafayette, IN",
-  // TODO: Aadi to provide the general-SWE résumé (without phone number) at public/resume.pdf
   resume: "/resume.pdf",
+  status: "Open to Summer 2027 internships",
 } as const;
