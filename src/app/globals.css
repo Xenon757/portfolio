@@ -48,6 +48,12 @@ html {
   display: block;
 }
 
+/* Set by components/ui/Cursor.tsx on mouse/trackpad devices once it mounts. */
+.custom-cursor,
+.custom-cursor * {
+  cursor: none !important;
+}
+
 /* Lenis' recommended base styles. */
 html.lenis,
 html.lenis body {

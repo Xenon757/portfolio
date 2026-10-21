@@ -164,6 +164,7 @@ Use official SVG logos where available; text-only chip as fallback.
   - `--bg` dark grey (#1f1f21, per Aadi), `--fg` off-white, `--muted` gray, `--accent` one bright accent (pick something original — not the reference site's color).
 - **Background:** faint drifting, twinkling dot field (`DotField` canvas) behind the whole site; still under reduced motion.
 - **Intro:** first-visit intro — name over black columns that wipe away left to right (`Intro`); once per session, skippable.
+- **Cursor:** custom arrow cursor (`Cursor`) that trails the pointer and turns toward the direction of movement; grows + accent on links/buttons. Mouse/trackpad only; native cursor kept without JS.
 - **Type scale:** hero headline `clamp(3rem, 12vw, 10rem)`, uppercase, tight leading; section headings uppercase with small label above (`MY STACK`, `SELECTED PROJECTS`).
 - **Spacing:** generous; sections ≥ `py-24` on desktop.
 - **Responsive:** mobile-first; test at 375px, 768px, 1280px, 1920px. Cursor-follow thumbnails are desktop-only (`pointer: fine`).

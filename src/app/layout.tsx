@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Geist } from "next/font/google";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { Cursor } from "@/components/ui/Cursor";
 import { DotField } from "@/components/ui/DotField";
 import { Intro } from "@/components/ui/Intro";
 import { Menu } from "@/components/ui/Menu";
@@ -52,6 +53,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <DotField />
+        <Cursor />
         <SmoothScroll>
           <Intro />
           <Menu />
