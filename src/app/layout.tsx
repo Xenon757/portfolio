@@ -24,13 +24,21 @@ export const metadata: Metadata = {
   description: site.description,
 };
 
+// Runs before first paint: lets the hero stay hidden until GSAP animates it in,
+// instead of flashing the server-rendered text first. Fails open — no JS or
+// reduced motion means no class, and the timeout reveals content regardless.
+const revealGuard = `(function(){try{if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var d=document.documentElement;d.classList.add("js-anim");setTimeout(function(){d.classList.remove("js-anim")},3000)}catch(e){}})()`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: revealGuard }} />
+      </head>
       <body className={`${display.variable} ${body.variable} antialiased`}>
         <a
           href="#main"

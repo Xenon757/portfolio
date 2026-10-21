@@ -3,6 +3,9 @@ export const site = {
   title: "Software Engineer",
   description:
     "Computer Science student at Purdue University building backend, cloud, and production systems.",
+  // From the résumé summary.
+  intro:
+    "CS student at Purdue with four software internships across backend, cloud, and production systems — I like hardening and shipping public web services.",
   email: "aadibelwal@gmail.com",
   github: "https://github.com/Xenon757",
   linkedin: "https://linkedin.com/in/aadi-belwal",

@@ -38,6 +38,11 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* See revealGuard in layout.tsx. GSAP sets visibility back inline when it runs. */
+.js-anim [data-hero] {
+  visibility: hidden;
+}
+
 /* Lenis' recommended base styles. */
 html.lenis,
 html.lenis body {
