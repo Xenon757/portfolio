@@ -70,15 +70,25 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 
 ### `projects.ts`
 
-**01 — Modulos** `slug: modulos`
-- Personal debt-management companion: track loan balances and visualize payoff timelines.
-- Live: https://www.modulos.app/
+**01 — Modulos** `slug: modulos` (formerly **PayoffPal** — renamed Oct 2026)
+- Tags: TypeScript, React, AWS Amplify, Cognito, AppSync, DynamoDB, Lambda, Plaid
+- Personal debt-management companion: enter (or import from your bank) income, expenses, and loans; get a debt-to-income affordability check for a new loan; build an avalanche payoff plan (highest APR first) with an interactive extra-payment timeline.
+- Live: https://www.modulos.app/ · Source: https://github.com/sri-meduri/modulos
 - Status: **In development** — show an "In progress" badge.
-- Team project with Aadi's friend **Sri**. Credit Sri on the project page.
-  - Aadi: coding and setting up the backend.
-  - Sri: came up with the idea; handles marketing.
-- "My role" must describe only Aadi's engineering/backend work — don't credit him with the idea or marketing.
-- TODO (ask Aadi): tech stack (backend language/framework, database, hosting, frontend), Sri's last name / link if he wants one, screenshots.
+- Team project with **Sri Meduri** (github.com/sri-meduri, owns the repo). Credit Sri on the project page.
+  - Sri: came up with the idea; handles marketing; also built the 12-month income vs. expenses chart.
+  - Aadi: rebuilt the app's backend on AWS and built the bank integration (details below).
+- Aadi's work (from his commits, Jul 2026):
+  - Rebuilt the app on **AWS Amplify Gen 2**: Cognito auth (email/password + Google sign-in), AppSync + DynamoDB data models scoped per user with owner-based authorization, deployed through Amplify's CI pipeline.
+  - **Plaid bank integration** via a Lambda function: link-token creation, public-token exchange, sync of loans/expenses/12-month income-vs-expense history, and disconnect.
+  - Security design: Plaid access tokens stored in a separate DynamoDB table that only the Lambda has IAM access to — no API path from the browser; OAuth redirect URLs validated against an allowlist; sandbox/production Plaid environment split.
+  - Sync robustness: handles bank logins with no loan accounts, detects subscriptions from raw transactions when the recurring-transactions API isn't available, counts P2P payments (Zelle/Venmo) as cash flow while excluding own-account transfers, auto-retries sync until history arrives.
+  - Hardened Google sign-in against stale browser sessions and surfaced auth/Plaid/write errors instead of failing silently.
+  - Added a privacy policy page, consent line at sign-up, robots.txt and sitemap.
+- Frontend: React 19, Vite, Tailwind, Recharts, React Router. The pre-rebuild calculator/UI baseline existed before Aadi's rebuild — don't credit Aadi with the payoff math or original UI.
+- "My role" must describe only Aadi's engineering/backend work — don't credit him with the idea, marketing, or the original app.
+- Don't claim users, real-bank production status, or launch — it's in development.
+- TODO (ask Aadi): screenshots; confirm Sri is OK being named and linked.
 
 **02 — OrbitTrack** `slug: orbittrack`
 - Tags: Python, Skyfield, FastAPI, pytest, GitHub Actions, Render
