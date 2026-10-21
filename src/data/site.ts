@@ -24,6 +24,18 @@ export const site = {
   status: "Open to Summer 2027 internships",
 } as const;
 
+/** About section copy. Facts from the résumé; no claims beyond it. */
+export const about = {
+  // Revealed word by word on scroll.
+  statement:
+    "I build backend and cloud systems that keep working after they ship: validated, tested, and ready for real traffic.",
+  paragraphs: [
+    "I'm a Computer Science student at Purdue University with junior standing, graduating in May 2028. I've done four software internships, from Django and React at Bazar Earth and Unity games at Unico Studio to the PySpark data pipeline I'm migrating at StatusGo now.",
+    "On my own projects I gravitate to the backend: APIs that validate their input, caches and retries that hold up when an upstream service doesn't, and tests that run offline. OrbitTrack's data mirror came out of a real production outage.",
+    "Before that, I led a Python program for 100+ K–8 students at Sewa International, designing the curriculum and managing volunteer teachers.",
+  ],
+};
+
 /** Home-page sections, in page order. `id` is the section's DOM id. */
 export const nav = [
   { id: "top", label: "Home" },

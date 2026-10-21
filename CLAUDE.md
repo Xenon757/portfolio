@@ -147,10 +147,10 @@ Display order: OrbitTrack, SignMeUp, Modulos — finished projects first, in-pro
 - Also taught 2nd grade math, reading, writing, science, and art.
 
 ### `stack.ts`
-- **Languages:** Python, C++, C, Java, JavaScript, C#, SQL, R
+- **Languages:** Python, TypeScript, JavaScript, C++, C, Java, C#, SQL, R (TypeScript added from Aadi's commits in SignMeUp/Modulos)
 - **Frameworks:** FastAPI, Flask, Django, React, Unity, Skyfield
 - **Data & Cloud:** AWS (Glue, S3), PySpark, Delta Lake, PostgreSQL, Pandas, Render
-- **Tools:** Git, GitHub Actions, pytest
+- **Tools:** Git, GitHub Actions, pytest, Docker (Docker added from SignMeUp's Dockerfile, Aadi's commit)
 
 Use official SVG logos where available; text-only chip as fallback.
 

@@ -54,6 +54,14 @@ html {
   cursor: none !important;
 }
 
+/* Experience rows fading in when expanded (transform + opacity only). */
+@keyframes exp-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
 /* Lenis' recommended base styles. */
 html.lenis,
 html.lenis body {
