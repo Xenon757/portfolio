@@ -77,16 +77,17 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 - Status: **In development** — show an "In progress" badge.
 - Team project with **Sri Meduri** (github.com/sri-meduri, owns the repo). Credit Sri on the project page.
   - Sri: came up with the idea; handles marketing; also built the 12-month income vs. expenses chart.
-  - Aadi: rebuilt the app's backend on AWS and built the bank integration (details below).
-- Aadi's work (from his commits, Jul 2026):
+  - Aadi: built the original interface and the payoff math, then rebuilt the backend on AWS and built the bank integration (details below).
+- Aadi's work (confirmed by Aadi; backend items from his commits, Jul 2026):
+  - Built the original app (as PayoffPal): the original interface and the avalanche payoff math. TODO (ask Aadi): did he also build the debt-to-income affordability check and the gross→net tax calculation? Don't claim them until confirmed.
   - Rebuilt the app on **AWS Amplify Gen 2**: Cognito auth (email/password + Google sign-in), AppSync + DynamoDB data models scoped per user with owner-based authorization, deployed through Amplify's CI pipeline.
   - **Plaid bank integration** via a Lambda function: link-token creation, public-token exchange, sync of loans/expenses/12-month income-vs-expense history, and disconnect.
   - Security design: Plaid access tokens stored in a separate DynamoDB table that only the Lambda has IAM access to — no API path from the browser; OAuth redirect URLs validated against an allowlist; sandbox/production Plaid environment split.
   - Sync robustness: handles bank logins with no loan accounts, detects subscriptions from raw transactions when the recurring-transactions API isn't available, counts P2P payments (Zelle/Venmo) as cash flow while excluding own-account transfers, auto-retries sync until history arrives.
   - Hardened Google sign-in against stale browser sessions and surfaced auth/Plaid/write errors instead of failing silently.
   - Added a privacy policy page, consent line at sign-up, robots.txt and sitemap.
-- Frontend: React 19, Vite, Tailwind, Recharts, React Router. The pre-rebuild calculator/UI baseline existed before Aadi's rebuild — don't credit Aadi with the payoff math or original UI.
-- "My role" must describe only Aadi's engineering/backend work — don't credit him with the idea, marketing, or the original app.
+- Frontend: React 19, Vite, Tailwind, Recharts, React Router.
+- "My role" must describe only Aadi's engineering work — don't credit him with the idea, marketing, or Sri's income vs. expenses chart.
 - Don't claim users, real-bank production status, or launch — it's in development.
 - TODO (ask Aadi): screenshots; confirm Sri is OK being named and linked.
 
