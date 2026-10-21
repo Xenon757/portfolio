@@ -119,7 +119,6 @@ export const projects: Project[] = [
       { label: "Original team repo", href: "https://github.com/ShlokShar/SignMeUp" },
       { label: "Devpost", href: "https://devpost.com/software/signmeup-the-asl-subtitle" },
     ],
-    // TODO: ask Aadi for teammates' names to credit them individually.
     team: "Team project: built at HelloWorld 2025, Purdue's largest hackathon for freshmen, by the SignMeUp team, where it won 3rd place. I've continued it in my own fork since.",
     thumbnail: {
       src: "/projects/signmeup-thumb.webp",
@@ -167,7 +166,7 @@ export const projects: Project[] = [
       "Member of the hackathon team that built the original version.",
       "After the hackathon, continued it on my own: fixed the path-traversal vulnerability and hardened uploads, split the pipeline into tested modules, built the animated signer and its timing, reworked the translation rules, rebuilt the frontend in React and TypeScript, and set up Docker, Fly.io, and CI/CD.",
     ],
-    // TODO: ask Aadi what's next (CLAUDE.md previously said "better sign media", which the Signbank animations now address).
+    // Aadi (Oct 2026): fine as is — team credited as a group, no "What's next".
     next: [],
   },
   {
