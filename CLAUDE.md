@@ -1,6 +1,6 @@
 # CLAUDE.md — Aadi Belwal Portfolio
 
-Personal portfolio site for **Aadi Belwal**, Computer Science student at Purdue University (junior credit standing, expected graduation May 2029). This file tells Claude Code what we're building, how, and the rules for working in this repo.
+Personal portfolio site for **Aadi Belwal**, Computer Science student at Purdue University (junior credit standing, expected graduation May 2028). This file tells Claude Code what we're building, how, and the rules for working in this repo.
 
 ---
 
