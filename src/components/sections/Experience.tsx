@@ -10,8 +10,11 @@ import { cn } from "@/lib/utils";
 // Takes the list as a prop (from the server page) so hidden entries never ship to the browser.
 export function Experience({ items }: { items: Job[] }) {
   const ref = useRef<HTMLElement>(null);
-  // The most recent role starts open; the rest are one click away.
-  const [open, setOpen] = useState<Set<number>>(() => new Set([0]));
+  // The most recent role with details starts open; the rest are one click away.
+  const [open, setOpen] = useState<Set<number>>(() => {
+    const first = items.findIndex((job) => job.bullets.length > 0);
+    return new Set(first === -1 ? [] : [first]);
+  });
 
   const toggle = (i: number) =>
     setOpen((prev) => {
@@ -97,36 +100,40 @@ export function Experience({ items }: { items: Job[] }) {
                     </p>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => toggle(i)}
-                    aria-expanded={isOpen}
-                    aria-controls={panelId}
-                    className="mt-3 inline-flex items-center gap-2 self-start text-xs tracking-[0.2em] text-muted uppercase transition-colors hover:text-fg md:mt-0"
-                  >
-                    {isOpen ? "Less" : "Details"}
-                    <Plus
-                      aria-hidden="true"
-                      className={cn("size-4 transition-transform duration-300", isOpen && "rotate-45")}
-                    />
-                    <span className="sr-only">for {job.company}</span>
-                  </button>
+                  {job.bullets.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => toggle(i)}
+                      aria-expanded={isOpen}
+                      aria-controls={panelId}
+                      className="mt-3 inline-flex items-center gap-2 self-start text-xs tracking-[0.2em] text-muted uppercase transition-colors hover:text-fg md:mt-0"
+                    >
+                      {isOpen ? "Less" : "Details"}
+                      <Plus
+                        aria-hidden="true"
+                        className={cn("size-4 transition-transform duration-300", isOpen && "rotate-45")}
+                      />
+                      <span className="sr-only">for {job.company}</span>
+                    </button>
+                  )}
                 </div>
 
-                <div
-                  id={panelId}
-                  hidden={!isOpen}
-                  className="motion-safe:animate-[exp-in_0.35s_ease-out] md:pl-[calc(14rem+2.5rem)]"
-                >
-                  <ul className="mt-5 max-w-3xl space-y-3">
-                    {job.bullets.map((b) => (
-                      <li key={b} className="flex gap-4 text-base leading-relaxed text-fg/85">
-                        <span className="mt-[0.65em] size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {job.bullets.length > 0 && (
+                  <div
+                    id={panelId}
+                    hidden={!isOpen}
+                    className="motion-safe:animate-[exp-in_0.35s_ease-out] md:pl-[calc(14rem+2.5rem)]"
+                  >
+                    <ul className="mt-5 max-w-3xl space-y-3">
+                      {job.bullets.map((b) => (
+                        <li key={b} className="flex gap-4 text-base leading-relaxed text-fg/85">
+                          <span className="mt-[0.65em] size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </li>
           );

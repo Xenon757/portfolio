@@ -20,15 +20,14 @@ export type Experience = {
 export const allExperience: Experience[] = [
   {
     company: "StatusGo",
-    // Aadi just started here — hidden from the site for now (Oct 2026). Flip to show it.
-    hidden: true,
     role: "Software Engineer Intern",
     start: "Sep 2026",
     end: "Present",
     location: "Remote",
-    bullets: [
-      "Migrating a nightly data-processing pipeline from pandas to PySpark on AWS Glue, with Delta Lake on S3.",
-    ],
+    // Aadi just started — show the role only, no details (Oct 2026). For later, the
+    // résumé bullet is: "Migrating a nightly data-processing pipeline from pandas to
+    // PySpark on AWS Glue, with Delta Lake on S3." Keep it in-progress wording.
+    bullets: [],
   },
   {
     company: "Unico Studio",

@@ -124,7 +124,7 @@ Display order: OrbitTrack, SignMeUp, Modulos — finished projects first, in-pro
 **StatusGo** — Software Engineer Intern · Remote · Sep 2026 – Present
 - Migrating a nightly data-processing pipeline from pandas to PySpark on AWS Glue with Delta Lake on S3.
 - Keep the **in-progress** wording ("Migrating"). Do not claim completion, runtime improvements, or record counts.
-- **Hidden from the site for now** (Aadi just started) — not in About or Experience. Kept in `experience.ts` with `hidden: true`.
+- **Show the role only — no bullets/details** (Aadi just started). Listed in Experience (company, role, dates, location); not mentioned in About.
 
 **Unico Studio** — Software Engineer Intern · Palo Alto, CA · May 2026 – Aug 2026
 - Developed and debugged features in C# and Unity for production mobile games including Brain Test.
