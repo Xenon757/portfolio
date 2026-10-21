@@ -40,12 +40,18 @@ html {
   scrollbar-gutter: stable;
 }
 
-/* See revealGuard in layout.tsx. GSAP sets visibility back inline when it runs. */
-.js-anim [data-hero] {
+/* See revealGuard in layout.tsx. GSAP sets visibility back inline when it runs.
+ * Not needed while the intro covers the page, so the hero can paint right away
+ * underneath it (and count toward Largest Contentful Paint). */
+.js-anim:not(.intro) [data-hero] {
   visibility: hidden;
 }
 .intro [data-intro] {
   display: block;
+}
+/* Start the intro name below its mask so it doesn't flash before GSAP raises it. */
+.intro [data-intro-name] {
+  transform: translateY(110%);
 }
 
 /* Set by components/ui/Cursor.tsx on mouse/trackpad devices once it mounts. */

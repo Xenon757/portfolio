@@ -7,6 +7,7 @@ import { GitHubIcon } from "@/components/ui/BrandIcons";
 import { Button } from "@/components/ui/Button";
 import { Badge, Tag } from "@/components/ui/Tag";
 import { getProject, projects } from "@/data/projects";
+import { site } from "@/data/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,14 +20,19 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProject((await params).slug);
   if (!project) return {};
+  // 1200x630 JPEG crops of the thumbnail: LinkedIn and others don't reliably show WebP.
+  const ogImage = { url: `/projects/${project.slug}-og.jpg`, width: 1200, height: 630, alt: project.thumbnail.alt };
   return {
     title: project.name,
     description: project.tagline,
     openGraph: {
-      title: project.name,
+      type: "article",
+      siteName: site.name,
+      title: `${project.name} — ${site.name}`,
       description: project.tagline,
-      images: [{ url: project.thumbnail.src, width: 2880, height: 1800, alt: project.thumbnail.alt }],
+      images: [ogImage],
     },
+    twitter: { card: "summary_large_image", images: [ogImage] },
   };
 }
 

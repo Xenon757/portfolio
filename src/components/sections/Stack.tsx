@@ -1,35 +1,15 @@
-"use client";
-
-import { useRef } from "react";
+import { StackMotion } from "@/components/motion/SectionMotion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { stack } from "@/data/stack";
-import { gsap, prefersReducedMotion, ScrollTrigger, useGSAP } from "@/lib/gsap";
 
 export function Stack() {
-  const ref = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      if (prefersReducedMotion()) return;
-      const items = gsap.utils.toArray<HTMLElement>("[data-stack-item]");
-      gsap.set(items, { y: 20, opacity: 0 });
-      ScrollTrigger.batch(items, {
-        start: "top 90%",
-        once: true,
-        onEnter: (batch) =>
-          gsap.to(batch, { y: 0, opacity: 1, duration: 0.6, stagger: 0.04, ease: "power3.out" }),
-      });
-    },
-    { scope: ref },
-  );
-
   return (
     <section
-      ref={ref}
       id="stack"
       aria-labelledby="stack-heading"
       className="border-t border-line px-6 py-24 md:px-12 md:py-32"
     >
+      <StackMotion />
       <SectionHeading id="stack-heading" label="My stack" title="Tools I use" />
 
       <div className="divide-y divide-line border-y border-line">

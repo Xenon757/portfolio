@@ -39,7 +39,12 @@ export function Intro() {
 
       const tl = gsap
         .timeline({ paused: true, onComplete: finish })
-        .from("[data-intro-name]", { yPercent: 110, duration: 0.65, ease: "power4.out" })
+        // fromTo with explicit y: 0 so GSAP ignores the CSS starting transform.
+        .fromTo(
+          "[data-intro-name]",
+          { y: 0, yPercent: 110 },
+          { y: 0, yPercent: 0, duration: 0.65, ease: "power4.out" },
+        )
         .addLabel("wipe", "+=0.2")
         .to("[data-intro-name]", { yPercent: -110, duration: 0.5, ease: "power3.in" }, "wipe")
         .to(

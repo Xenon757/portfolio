@@ -1,57 +1,20 @@
-"use client";
-
 import { ArrowDown, FileText, Mail } from "lucide-react";
-import { useRef } from "react";
+import { HeroMotion } from "@/components/motion/HeroMotion";
 import { GitHubIcon, LinkedInIcon } from "@/components/ui/BrandIcons";
 import { Button } from "@/components/ui/Button";
 import { site, stats } from "@/data/site";
-import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap";
-import { whenIntroRevealed } from "@/lib/intro";
 
 const headline = ["Software", "Engineer"];
 
+// Server component; animation lives in HeroMotion so React doesn't hydrate this markup.
 export function Hero() {
-  const ref = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const content = "[data-hero]";
-      if (prefersReducedMotion()) {
-        gsap.set(content, { visibility: "visible" });
-        return;
-      }
-      const tl = gsap
-        .timeline({ paused: true, defaults: { ease: "power4.out" } })
-        .from("[data-hero-line]", { yPercent: 110, duration: 1.1, stagger: 0.12 })
-        .from("[data-hero-fade]", { y: 24, opacity: 0, duration: 0.8, stagger: 0.08 }, "-=0.75")
-        .fromTo(
-          "[data-count]",
-          { innerText: 0 },
-          {
-            // Read the target from data-count, not the text, which may already be mid-tween.
-            innerText: (_: number, el: HTMLElement) => Number(el.dataset.count),
-            snap: { innerText: 1 },
-            duration: 1.4,
-            ease: "power2.out",
-            stagger: 0.1,
-          },
-          "<0.2",
-        );
-      // The "from" states above are applied synchronously, so it's safe to un-hide now.
-      gsap.set(content, { visibility: "visible" });
-      // On a first visit, start as the intro uncovers the page.
-      return whenIntroRevealed(() => tl.play());
-    },
-    { scope: ref },
-  );
-
   return (
     <section
-      ref={ref}
       id="top"
       aria-labelledby="hero-heading"
       className="relative flex min-h-svh flex-col px-6 pt-28 pb-8 md:px-12 md:pt-32 md:pb-10"
     >
+      <HeroMotion />
       <div data-hero className="flex flex-1 flex-col">
         <div data-hero-fade>
           <p className="inline-flex items-center gap-2.5 rounded-full border border-line bg-bg-elevated px-4 py-2 text-xs tracking-wide text-fg">

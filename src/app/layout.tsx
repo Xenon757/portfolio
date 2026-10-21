@@ -21,6 +21,14 @@ const body = Geist({
   subsets: ["latin"],
 });
 
+// Default share image (1200x630). Project pages set their own.
+const ogImage = {
+  url: "/og.png",
+  width: 1200,
+  height: 630,
+  alt: "Aadi Belwal, Software Engineer: Computer Science at Purdue University, open to Summer 2027 internships.",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -28,6 +36,15 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.description,
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: `${site.name} — ${site.title}`,
+    description: site.description,
+    locale: "en_US",
+    images: [ogImage],
+  },
+  twitter: { card: "summary_large_image", images: [ogImage] },
 };
 
 // Runs before first paint. Adds "js-anim" so the hero stays hidden until GSAP
