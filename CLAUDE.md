@@ -71,9 +71,18 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 
 ### `projects.ts`
 
-Display order: OrbitTrack, SignMeUp, Modulos — finished projects first, in-progress Modulos last (per Aadi). The full page copy lives in `src/data/projects.ts`, written from each repo's README and commit history (checked 2026-10-21). The repos are the source of truth for technical facts and supersede older résumé figures; the notes below are the summary.
+Display order: SignMeUp, OrbitTrack, Modulos — SignMeUp first as Aadi's strongest, in-progress Modulos last (per Aadi). The full page copy lives in `src/data/projects.ts`, written from each repo's README and commit history (checked 2026-10-21). The repos are the source of truth for technical facts and supersede older résumé figures; the notes below are the summary.
 
-**01 — OrbitTrack** `slug: orbittrack` — solo project (all commits are Aadi's)
+**01 — SignMeUp** `slug: signmeup`
+- Tags: Python, Flask, Whisper, Stanza, MediaPipe, React, TypeScript, pytest, Fly.io
+- Live: https://signmeup.fly.dev/ · Source: https://github.com/Xenon757/SignMeUp (fork of ShlokShar/SignMeUp) · Devpost: https://devpost.com/software/signmeup-the-asl-subtitle
+- **Won 3rd place at HelloWorld 2025**, Purdue's largest hackathon for freshmen. Team project — credit the original team (as a group, per Aadi) and link the original repo and Devpost.
+- At the hackathon: Flask pipeline transcribing with Whisper and converting speech into ASL signs with Stanza parsing.
+- Since the hackathon, all work in the fork is Aadi's (82 commits, Sep 2025 – Oct 2026): upload video/audio → Whisper with word timestamps → ASL grammar rules → 2D animated signer built from ASL Signbank videos with MediaPipe, timed to speech; React + TypeScript frontend; demo page ("Me at the zoo" in YouTube's player) and compare page; path-traversal fix + upload hardening with regression test; Docker + Fly.io + GitHub Actions CI/CD. **130** Python + **11** frontend tests (the older résumé said 25).
+- Don't use frames of the YouTube demo video in screenshots (third-party video showing a real person).
+- What's next: none listed (Aadi is fine with the page as is).
+
+**02 — OrbitTrack** `slug: orbittrack` — solo project (all commits are Aadi's)
 - Tags: Python, Skyfield, FastAPI, pytest, mypy, GitHub Actions, Render
 - Live: https://orbittrack-dpeo.onrender.com/ · Source: https://github.com/Xenon757/Orbittrack
 - What it does: predicts satellite passes for any ground station (six CelesTrak groups incl. weather and amateur radio) by propagating TLEs with SGP4 via Skyfield — rise/peak/set times, look angles, polar sky plot, ground-track map, live predicted position. FastAPI web app, JSON API, and a CLI with multi-satellite/multi-station contact scheduling. Accuracy check against NASA's ISS ephemeris.
@@ -82,15 +91,6 @@ Display order: OrbitTrack, SignMeUp, Modulos — finished projects first, in-pro
 - Ops story: Render → CelesTrak requests timed out in production → GitHub Actions mirrors the six groups to GitHub Pages every 6 h; 5-minute retry back-off with immediate 503.
 - Render free tier: first load can take up to about a minute to wake.
 - What's next (confirmed by Aadi, already in progress): multi-satellite scheduling in the web app, accuracy vs. TLE age across successive NASA ephemerides, atmospheric refraction + priority-aware scheduling.
-
-**02 — SignMeUp** `slug: signmeup`
-- Tags: Python, Flask, Whisper, Stanza, MediaPipe, React, TypeScript, pytest, Fly.io
-- Live: https://signmeup.fly.dev/ · Source: https://github.com/Xenon757/SignMeUp (fork of ShlokShar/SignMeUp) · Devpost: https://devpost.com/software/signmeup-the-asl-subtitle
-- **Won 3rd place at HelloWorld 2025**, Purdue's largest hackathon for freshmen. Team project — credit the original team (as a group, per Aadi) and link the original repo and Devpost.
-- At the hackathon: Flask pipeline transcribing with Whisper and converting speech into ASL signs with Stanza parsing.
-- Since the hackathon, all work in the fork is Aadi's (82 commits, Sep 2025 – Oct 2026): upload video/audio → Whisper with word timestamps → ASL grammar rules → 2D animated signer built from ASL Signbank videos with MediaPipe, timed to speech; React + TypeScript frontend; demo page ("Me at the zoo" in YouTube's player) and compare page; path-traversal fix + upload hardening with regression test; Docker + Fly.io + GitHub Actions CI/CD. **130** Python + **11** frontend tests (the older résumé said 25).
-- Don't use frames of the YouTube demo video in screenshots (third-party video showing a real person).
-- What's next: none listed (Aadi is fine with the page as is).
 
 **03 — Modulos** `slug: modulos` (formerly **PayoffPal** — renamed Oct 2026)
 - Tags: TypeScript, React, AWS Amplify, Cognito, AppSync, DynamoDB, Lambda, Plaid

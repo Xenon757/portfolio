@@ -39,7 +39,70 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  // Order matters: finished, live projects first; in-progress Modulos last (Aadi's call).
+  // Order matters: SignMeUp first (Aadi's strongest), then OrbitTrack; in-progress Modulos last.
+  {
+    slug: "signmeup",
+    name: "SignMeUp",
+    tagline:
+      "Turns the speech in a video into ASL, signed by an animated figure timed to the words.",
+    tags: ["Python", "Flask", "Whisper", "Stanza", "MediaPipe", "React", "TypeScript", "pytest", "Fly.io"],
+    award: "3rd place · HelloWorld 2025",
+    live: "https://signmeup.fly.dev/",
+    source: "https://github.com/Xenon757/SignMeUp",
+    links: [
+      { label: "Original team repo", href: "https://github.com/ShlokShar/SignMeUp" },
+      { label: "Devpost", href: "https://devpost.com/software/signmeup-the-asl-subtitle" },
+    ],
+    team: "Team project: built at HelloWorld 2025, Purdue's largest hackathon for freshmen, by the SignMeUp team, where it won 3rd place. I've continued it in my own fork since.",
+    thumbnail: {
+      src: "/projects/signmeup-thumb.webp",
+      alt: "SignMeUp landing page with an upload box and an animated signer performing the sign THANK-YOU.",
+    },
+    images: [
+      {
+        src: "/projects/signmeup-how.webp",
+        alt: "SignMeUp's how-it-works steps (listen, translate, sign) and its explanation of why ASL and not just captions.",
+        caption: "How it works, and why ASL rather than captions alone.",
+      },
+    ],
+    problem: [
+      "Captions are written English, but for many Deaf viewers ASL is their first language and English their second, so captions alone can mean watching in a second language. SignMeUp signs the speech in ASL and keeps the captions.",
+    ],
+    built: [
+      "At the hackathon, the team built a Flask pipeline that transcribes video with Whisper and uses Stanza parsing to convert speech into ASL signs.",
+      "Since then: upload a video or audio file and SignMeUp transcribes it with word timings, translates each sentence with ASL grammar rules, and signs it with a 2D animated figure in a corner of the video, like a TV interpreter.",
+      "A demo that signs “Me at the zoo” (the first YouTube video) without uploading anything, and a compare page that plays any word's animation next to its source dictionary video.",
+      "“Optimize for ASL,” which slows the video just enough that the signs fit comfortably.",
+    ],
+    how: [
+      {
+        title: "English → ASL translation rules",
+        body: "Stanza parses each sentence (parts of speech, base forms, dependencies). Articles and forms of “to be” are dropped, words are signed in their base form, negation and quantifiers are always signed, question words move to the end, and names are fingerspelled. Words are only ever moved later, never earlier, because a sign can't play before its word has been spoken.",
+      },
+      {
+        title: "From dictionary video to animated signer",
+        body: "Each sign comes from an ASL Signbank video. MediaPipe tracks the body and hands, the clip is trimmed to just the part where the hands move, and points are smoothed over time, which cuts finger jitter by about two-thirds. When the tracker loses a hand behind the other, it's recovered by re-running the hand model on a zoomed-in crop.",
+      },
+      {
+        title: "Keeping pace with speech",
+        body: "When speech is slow enough, each sign starts within half a second of its word. In fast stretches it works like closed captions: a sentence's signs share the time until the next sentence, played at 1.5× and up to 3× when needed.",
+      },
+      {
+        title: "Fixing a path-traversal bug",
+        body: "The original upload handler used the uploaded filename as the file path, so a name like ../../app.py could write outside the upload folder. Uploads now get random storage names, size and type limits, and are deleted after processing, with a regression test for the exploit.",
+      },
+      {
+        title: "Shipping it",
+        body: "A Docker image bakes in the Whisper, Stanza, and MediaPipe models and runs on Fly.io, deployed by GitHub Actions after the Python and frontend tests pass. Models load at startup and the 858 signs for the most common English words are animated ahead of time, so uploads don't wait on cold starts. 130 Python tests and 11 frontend tests run offline.",
+      },
+    ],
+    role: [
+      "Member of the hackathon team that built the original version.",
+      "After the hackathon, continued it on my own: fixed the path-traversal vulnerability and hardened uploads, split the pipeline into tested modules, built the animated signer and its timing, reworked the translation rules, rebuilt the frontend in React and TypeScript, and set up Docker, Fly.io, and CI/CD.",
+    ],
+    // Aadi (Oct 2026): fine as is — team credited as a group, no "What's next".
+    next: [],
+  },
   {
     slug: "orbittrack",
     name: "OrbitTrack",
@@ -105,69 +168,6 @@ export const projects: Project[] = [
       "Compare more TLEs against successive NASA ephemerides to measure how accuracy falls off with TLE age.",
       "Model atmospheric refraction, and let the scheduler weigh pass quality and priority.",
     ],
-  },
-  {
-    slug: "signmeup",
-    name: "SignMeUp",
-    tagline:
-      "Turns the speech in a video into ASL, signed by an animated figure timed to the words.",
-    tags: ["Python", "Flask", "Whisper", "Stanza", "MediaPipe", "React", "TypeScript", "pytest", "Fly.io"],
-    award: "3rd place · HelloWorld 2025",
-    live: "https://signmeup.fly.dev/",
-    source: "https://github.com/Xenon757/SignMeUp",
-    links: [
-      { label: "Original team repo", href: "https://github.com/ShlokShar/SignMeUp" },
-      { label: "Devpost", href: "https://devpost.com/software/signmeup-the-asl-subtitle" },
-    ],
-    team: "Team project: built at HelloWorld 2025, Purdue's largest hackathon for freshmen, by the SignMeUp team, where it won 3rd place. I've continued it in my own fork since.",
-    thumbnail: {
-      src: "/projects/signmeup-thumb.webp",
-      alt: "SignMeUp landing page with an upload box and an animated signer performing the sign THANK-YOU.",
-    },
-    images: [
-      {
-        src: "/projects/signmeup-how.webp",
-        alt: "SignMeUp's how-it-works steps (listen, translate, sign) and its explanation of why ASL and not just captions.",
-        caption: "How it works, and why ASL rather than captions alone.",
-      },
-    ],
-    problem: [
-      "Captions are written English, but for many Deaf viewers ASL is their first language and English their second, so captions alone can mean watching in a second language. SignMeUp signs the speech in ASL and keeps the captions.",
-    ],
-    built: [
-      "At the hackathon, the team built a Flask pipeline that transcribes video with Whisper and uses Stanza parsing to convert speech into ASL signs.",
-      "Since then: upload a video or audio file and SignMeUp transcribes it with word timings, translates each sentence with ASL grammar rules, and signs it with a 2D animated figure in a corner of the video, like a TV interpreter.",
-      "A demo that signs “Me at the zoo” (the first YouTube video) without uploading anything, and a compare page that plays any word's animation next to its source dictionary video.",
-      "“Optimize for ASL,” which slows the video just enough that the signs fit comfortably.",
-    ],
-    how: [
-      {
-        title: "English → ASL translation rules",
-        body: "Stanza parses each sentence (parts of speech, base forms, dependencies). Articles and forms of “to be” are dropped, words are signed in their base form, negation and quantifiers are always signed, question words move to the end, and names are fingerspelled. Words are only ever moved later, never earlier, because a sign can't play before its word has been spoken.",
-      },
-      {
-        title: "From dictionary video to animated signer",
-        body: "Each sign comes from an ASL Signbank video. MediaPipe tracks the body and hands, the clip is trimmed to just the part where the hands move, and points are smoothed over time, which cuts finger jitter by about two-thirds. When the tracker loses a hand behind the other, it's recovered by re-running the hand model on a zoomed-in crop.",
-      },
-      {
-        title: "Keeping pace with speech",
-        body: "When speech is slow enough, each sign starts within half a second of its word. In fast stretches it works like closed captions: a sentence's signs share the time until the next sentence, played at 1.5× and up to 3× when needed.",
-      },
-      {
-        title: "Fixing a path-traversal bug",
-        body: "The original upload handler used the uploaded filename as the file path, so a name like ../../app.py could write outside the upload folder. Uploads now get random storage names, size and type limits, and are deleted after processing, with a regression test for the exploit.",
-      },
-      {
-        title: "Shipping it",
-        body: "A Docker image bakes in the Whisper, Stanza, and MediaPipe models and runs on Fly.io, deployed by GitHub Actions after the Python and frontend tests pass. Models load at startup and the 858 signs for the most common English words are animated ahead of time, so uploads don't wait on cold starts. 130 Python tests and 11 frontend tests run offline.",
-      },
-    ],
-    role: [
-      "Member of the hackathon team that built the original version.",
-      "After the hackathon, continued it on my own: fixed the path-traversal vulnerability and hardened uploads, split the pipeline into tested modules, built the animated signer and its timing, reworked the translation rules, rebuilt the frontend in React and TypeScript, and set up Docker, Fly.io, and CI/CD.",
-    ],
-    // Aadi (Oct 2026): fine as is — team credited as a group, no "What's next".
-    next: [],
   },
   {
     slug: "modulos",
