@@ -12,10 +12,10 @@ export const site = {
   name: "Aadi Belwal",
   title: "Software Engineer",
   description:
-    "Computer Science student at Purdue University building backend, cloud, and production systems.",
-  // From the résumé summary.
+    "Computer Science student at Purdue University building backend and cloud systems and multiplayer mobile games.",
+  // From the résumé summary plus the Unico Studio (games) internship.
   intro:
-    "CS student at Purdue with four software internships across backend, cloud, and production systems — I like hardening and shipping public web services.",
+    "CS student at Purdue with four software internships across backend, cloud, and game development, from hardened web services to multiplayer for production mobile games.",
   email: "aadibelwal@gmail.com",
   linkedin: "https://linkedin.com/in/aadi-belwal",
   location: "Palo Alto, CA / West Lafayette, IN",
@@ -26,11 +26,12 @@ export const site = {
 export const about = {
   // Revealed word by word on scroll.
   statement:
-    "I build backend and cloud systems that keep working after they ship: validated, tested, and ready for real traffic.",
+    "I build software that keeps working after it ships, from backend services that hold up under real traffic to multiplayer mobile games.",
   paragraphs: [
-    "I'm a Computer Science student at Purdue University with junior standing, graduating in May 2028. I've had four software internships, including Django and React at Bazar Earth and Unity games at Unico Studio.",
+    "I'm a Computer Science student at Purdue University with junior standing, graduating in May 2028, and I've had four software internships across web, data, and games.",
     "On my own projects I gravitate to the backend: APIs that validate their input, caches and retries that hold up when an upstream service doesn't, and tests that run offline. OrbitTrack's data mirror came out of a real production outage.",
-    "Before that, I led a Python program for 100+ K–8 students at Sewa International, designing the curriculum and managing volunteer teachers.",
+    "I've also worked in game development. At Unico Studio I built and debugged features in C# and Unity for production mobile games including Brain Test, integrated the AppLovin MAX ad SDK, and built networked multiplayer that keeps player and game state in sync across clients.",
+    "As a volunteer, I led a Python program for 100+ K–8 students at Sewa International, designing the curriculum and managing volunteer teachers.",
   ],
 };
 

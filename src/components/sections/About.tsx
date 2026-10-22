@@ -23,7 +23,7 @@ export function About() {
         ))}
       </p>
 
-      <div data-about-body className="mt-14 grid gap-8 md:mt-20 md:grid-cols-3 md:gap-10">
+      <div data-about-body className="mt-14 grid max-w-5xl gap-8 md:mt-20 md:grid-cols-2 md:gap-x-16 md:gap-y-10">
         {about.paragraphs.map((p) => (
           <p key={p} data-about-p className="text-base leading-relaxed text-muted md:text-lg">
             {p}
