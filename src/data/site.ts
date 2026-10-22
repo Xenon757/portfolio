@@ -30,7 +30,7 @@ export const about = {
   paragraphs: [
     "I'm a Computer Science student at Purdue University with junior standing, graduating in May 2028, and I've had four software internships across web, data, and games.",
     "On my own projects I gravitate to the backend: APIs that validate their input, caches and retries that hold up when an upstream service doesn't, and tests that run offline. OrbitTrack's data mirror came out of a real production outage.",
-    "I've also worked in game development. At Unico Studio I built and debugged features in C# and Unity for production mobile games including Brain Test, integrated the AppLovin MAX ad SDK, and built networked multiplayer that keeps player and game state in sync across clients.",
+    "I've also worked in game development. At Unico Studio I built and debugged features in C# and Unity for production mobile games including Brain Test, integrated the AppLovin MAX ad SDK, and built networked multiplayer that keeps player and game state in sync across clients. On my own, I'm building Relay, a top-down puzzle game in Unity where every rewind leaves behind a ghost of your past run that you have to work with.",
     "As a volunteer, I led a Python program for 100+ K–8 students at Sewa International, designing the curriculum and managing volunteer teachers.",
   ],
 };
