@@ -65,14 +65,17 @@ export function Experience({ items }: { items: Job[] }) {
                     <Plus aria-hidden="true" className="size-4 transition-transform duration-300 group-open:rotate-45" />
                     <span className="sr-only">for {job.company}</span>
                   </summary>
-                  <ul className="mt-5 max-w-3xl space-y-3 motion-safe:group-open:animate-[exp-in_0.35s_ease-out] md:pl-[calc(14rem+2.5rem)]">
-                    {job.bullets.map((b) => (
-                      <li key={b} className="flex gap-4 text-base leading-relaxed text-fg/85">
-                        <span className="mt-[0.65em] size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Padding on a wrapper so max-w applies to the text, aligned under the company name. */}
+                  <div className="md:pl-[calc(14rem+2.5rem)]">
+                    <ul className="mt-5 max-w-3xl space-y-3 motion-safe:group-open:animate-[exp-in_0.35s_ease-out]">
+                      {job.bullets.map((b) => (
+                        <li key={b} className="flex gap-4 text-base leading-relaxed text-fg/85">
+                          <span className="mt-[0.65em] size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </details>
               )}
             </div>

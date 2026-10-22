@@ -28,10 +28,10 @@ export const about = {
   statement:
     "I build software that keeps working after it ships, from backend services that hold up under real traffic to multiplayer mobile games.",
   paragraphs: [
-    "I'm a Computer Science student at Purdue University with junior standing, graduating in May 2028, and I've had four software internships across web, data, and games.",
+    "I'm a Computer Science student at Purdue University with junior standing, graduating in May 2028, and I've had four software internships across web, data, and games. As a volunteer, I also led a Python program for 100+ K–8 students at Sewa International, designing the curriculum and managing volunteer teachers.",
     "On my own projects I gravitate to the backend: APIs that validate their input, caches and retries that hold up when an upstream service doesn't, and tests that run offline. OrbitTrack's data mirror came out of a real production outage.",
-    "I've also worked in game development. At Unico Studio I built and debugged features in C# and Unity for production mobile games including Brain Test, integrated the AppLovin MAX ad SDK, and built networked multiplayer that keeps player and game state in sync across clients. On my own, I'm building Relay, a top-down puzzle game in Unity where every rewind leaves behind a ghost of your past run that you have to work with.",
-    "As a volunteer, I led a Python program for 100+ K–8 students at Sewa International, designing the curriculum and managing volunteer teachers.",
+    "I got into game development in middle school, trying to rebuild my favorite racing game in Unity. It was rough, but it was the first real game I worked on. Now I'm building Relay, a top-down puzzle game in Unity where every rewind leaves behind a ghost of your past run that you have to work with.",
+    "At Unico Studio I worked on Liquid Sort, a mobile puzzle game: its touch controls, core gameplay, and liquid shaders, plus a procedural level generator that throws out any level that can't be solved. I also built turn-based and head-to-head multiplayer and fixed bugs in live games like Brain Test.",
   ],
 };
 
