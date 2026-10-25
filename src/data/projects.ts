@@ -39,7 +39,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  // Order matters: SignMeUp first (Aadi's strongest), then OrbitTrack; in-progress Modulos last.
+  // Order matters: SignMeUp first (Aadi's strongest), then Tessera, then OrbitTrack; in-progress Modulos last.
   {
     slug: "signmeup",
     name: "SignMeUp",
@@ -101,6 +101,72 @@ export const projects: Project[] = [
       "After the hackathon, continued it on my own: fixed the path-traversal vulnerability and hardened uploads, split the pipeline into tested modules, built the animated signer and its timing, reworked the translation rules, rebuilt the frontend in React and TypeScript, and set up Docker, Fly.io, and CI/CD.",
     ],
     // Aadi (Oct 2026): fine as is — team credited as a group, no "What's next".
+    next: [],
+  },
+  {
+    slug: "tessera",
+    name: "Tessera",
+    tagline:
+      "A real-time 3D software rasterizer written from scratch in C++, with no GPU API, plus a Blender-style editor that runs in the browser via WebAssembly.",
+    tags: ["C++17", "WebAssembly", "SIMD", "Multithreading", "CMake", "SDL2", "JavaScript", "Cloudflare Workers", "Claude API"],
+    live: "https://xenon757.github.io/tessera/",
+    source: "https://github.com/Xenon757/tessera",
+    liveNote: "The editor runs entirely in your browser. On the first visit it reloads once to turn on multithreading.",
+    thumbnail: {
+      src: "/projects/tessera-thumb.webp",
+      alt: "Tessera's web editor showing a Liquid Sort-style liquid tube with a move gizmo, an outliner, a keyframe timeline, and a properties panel.",
+    },
+    images: [
+      {
+        src: "/projects/tessera-bunny.webp",
+        alt: "The Stanford bunny (69,451 triangles) imported into the Tessera editor with smooth Phong shading.",
+        caption: "The Stanford bunny (69,451 triangles), imported as an OBJ and shaded per pixel.",
+      },
+      {
+        src: "/projects/tessera-ps1.webp",
+        alt: "The same bunny in Tessera's PS1 mode, with low-resolution pixels and dithered color.",
+        caption: "PS1 mode: vertex snapping, 15-bit dithered color, and a low-res upscale, each a separate setting.",
+      },
+    ],
+    problem: [
+      "Graphics APIs like OpenGL, Vulkan, and Metal hand the hard parts of rendering to the GPU. Tessera does every stage of the pipeline on the CPU, by hand, from clipping and rasterization to depth testing and shading, then builds a full 3D editor on top of it that runs in a browser tab.",
+    ],
+    built: [
+      "The whole rendering pipeline: near-plane clipping, perspective-correct interpolation, a top-left fill rule (exactly one triangle owns every pixel, verified on 460k pixels), z-buffering, flat/Gouraud/Phong shading, and bilinear textures.",
+      "Tiled, multithreaded rasterization on a custom thread pool: 4.6× faster on 8 cores (6.1× when pixel-bound), with byte-identical output at any thread count.",
+      "An ARM NEON SIMD pixel loop (1.6× faster on large triangles) that runs in the browser as WebAssembly SIMD (1.75×), alongside WebAssembly threads (4× on the bunny), with frames that match native byte for byte.",
+      "A Blender-style editor: scene graph, edit-mode modeling (extrude, inset, bevel, loop cut), keyframe animation on a timeline, grouped undo/redo, saved scenes, and PNG and video export.",
+      "OBJ and binary FBX import, with an FBX reader and zlib decompressor written from scratch (FBX 5 through 7.7, fuzzed with 30,000 corrupted files).",
+      "Programmable vertex and pixel shaders, a Liquid Sort-style liquid demo built on them, and a PS1 mode where every quirk of the console is its own setting.",
+      "An AI chat that edits the scene from plain English, with Claude calling the editor's own commands as tools.",
+    ],
+    how: [
+      {
+        title: "Two parallel passes, no locks",
+        body: "A geometry pass runs vertex, clip, project, and cull in parallel over chunks of the mesh and bins triangles into 64-pixel screen tiles; a raster pass then shades the tiles in parallel. Tiles never overlap, so raster threads need no locks, and each tile draws its triangles in submission order, which keeps the image identical at any thread count. A profile showed about 60% of the frame in rasterization and 37% in geometry, so both passes run in parallel; threading only one would cap the speedup under 3×.",
+      },
+      {
+        title: "SIMD that draws the same pixels",
+        body: "The NEON loop shades four pixels per instruction. Floating-point contraction is turned off so the SIMD and scalar loops do identical IEEE operations, and a test checks their images match byte for byte, which also makes it safe to choose a loop per triangle (thin ones stay scalar). Emscripten translates the same intrinsics to WebAssembly SIMD, so the browser draws the same pixels as an ARM Mac.",
+      },
+      {
+        title: "Threads on GitHub Pages",
+        body: "WebAssembly threads need SharedArrayBuffer, which browsers only allow on cross-origin isolated pages, and that takes response headers GitHub Pages can't send. A small service worker adds them: the first visit registers it and reloads once, and if isolation isn't possible the page loads a single-threaded build that draws the same pixels.",
+      },
+      {
+        title: "An editor that never touches the pixel loop",
+        body: "Every change is a JSON command that is validated first and records its exact inverse, so undo replays inverses and a drag or a field edit can be one grouped step. The web UI, the desktop window, and the AI chat all edit the scene through that one path. A test checks that rendering a scene is byte-identical to drawing its meshes directly.",
+      },
+      {
+        title: "AI chat without exposing the key",
+        body: "A small Cloudflare Worker holds the Claude API key and fixes the model, instructions, and tool list; it also checks the page's origin, rate-limits each visitor, and caps request and reply sizes. The agent loop runs in the page, and every tool call goes through the same validated commands as the UI, so bad edits are rejected and sent back for Claude to fix. One reply is one undo step.",
+      },
+      {
+        title: "Testing it",
+        body: "17 CTest tests cover golden-image hashes (scalar, NEON, and threaded output must match), a randomized chain of 600 modeling operations checked for closed, outward-facing meshes, the PNG encoder and zlib decoder against Python's zlib, and FBX loading against reference exports. Fuzzing under AddressSanitizer and UBSan caught two unchecked sizes, now fixed, and CI runs both the normal and sanitizer builds on every push.",
+      },
+    ],
+    role: ["Solo project: I designed, built, tested, and deployed it."],
     next: [],
   },
   {

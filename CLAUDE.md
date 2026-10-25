@@ -10,7 +10,7 @@ A fast, polished, single-page portfolio with per-project detail pages. Visual an
 
 **Inspiration, not a clone.** The reference site's source is public (github.com/Tajmirul/portfolio-2.0), but do **not** copy its code, copy text, images, logos, or exact layouts. Recreate the *feel* — dark minimal aesthetic, motion, typographic hierarchy — with our own components, palette, and content.
 
-Primary audience: internship recruiters (SWE, backend/cloud, ground software, firmware/embedded). A recruiter should understand who Aadi is and see the three projects within ~10 seconds.
+Primary audience: internship recruiters (SWE, backend/cloud, ground software, firmware/embedded). A recruiter should understand who Aadi is and see the projects within ~10 seconds.
 
 ---
 
@@ -71,7 +71,7 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 
 ### `projects.ts`
 
-Display order: SignMeUp, OrbitTrack, Modulos — SignMeUp first as Aadi's strongest, in-progress Modulos last (per Aadi). The full page copy lives in `src/data/projects.ts`, written from each repo's README and commit history (checked 2026-10-21). The repos are the source of truth for technical facts and supersede older résumé figures; the notes below are the summary.
+Display order: SignMeUp, Tessera, OrbitTrack, Modulos — SignMeUp first as Aadi's strongest, in-progress Modulos last (per Aadi). Tessera's slot (02) was chosen by Claude when it was added; Aadi may move it. The full page copy lives in `src/data/projects.ts`, written from each repo's README and commit history (checked 2026-10-21). The repos are the source of truth for technical facts and supersede older résumé figures; the notes below are the summary.
 
 **01 — SignMeUp** `slug: signmeup`
 - Tags: Python, Flask, Whisper, Stanza, MediaPipe, React, TypeScript, pytest, Fly.io
@@ -82,7 +82,15 @@ Display order: SignMeUp, OrbitTrack, Modulos — SignMeUp first as Aadi's strong
 - Don't use frames of the YouTube demo video in screenshots (third-party video showing a real person).
 - What's next: none listed (Aadi is fine with the page as is).
 
-**02 — OrbitTrack** `slug: orbittrack` — solo project (all commits are Aadi's)
+**02 — Tessera** `slug: tessera` — solo project (all 124 commits are Aadi's, Oct 2026)
+- Tags: C++17, WebAssembly, SIMD, Multithreading, CMake, SDL2, JavaScript, Cloudflare Workers, Claude API
+- Live: https://xenon757.github.io/tessera/ (GitHub Pages; reloads once on first visit to enable threads) · Source: https://github.com/Xenon757/tessera
+- What it is: a real-time 3D software rasterizer in C++17 — every pipeline stage on the CPU, no OpenGL/Vulkan/Metal — with a Blender-style web editor (WebAssembly): modeling, keyframe animation, undo/redo, PNG/video export, OBJ + binary FBX import (FBX reader and zlib decompressor from scratch), PS1 mode, programmable shaders with a Liquid Sort–style liquid demo, and an AI chat (Claude via a Cloudflare Worker that holds the key).
+- Numbers (from the README; use exactly these): top-left fill rule verified on 460k pixels; threads 4.6× on 8 cores (6.1× pixel-bound), byte-identical at any thread count; NEON 1.6×; WebAssembly SIMD 1.75×; WebAssembly threads 4× on the bunny; FBX fuzzed with 30,000 corrupted files; 17 CTest tests; CI runs normal + ASan/UBSan builds.
+- Screenshots in `public/projects/` were captured from the live editor: `tessera-thumb.webp` (liquid tube example), `tessera-bunny.webp` (Stanford bunny import), `tessera-ps1.webp` (bunny in PS1 mode). The Stanford Bunny is from the Stanford 3D Scanning Repository.
+- What's next: none listed (README roadmap is complete).
+
+**03 — OrbitTrack** `slug: orbittrack` — solo project (all commits are Aadi's)
 - Tags: Python, Skyfield, FastAPI, pytest, mypy, GitHub Actions, Render
 - Live: https://orbittrack-dpeo.onrender.com/ · Source: https://github.com/Xenon757/Orbittrack
 - What it does: predicts satellite passes for any ground station (six CelesTrak groups incl. weather and amateur radio) by propagating TLEs with SGP4 via Skyfield — rise/peak/set times, look angles, polar sky plot, ground-track map, live predicted position. FastAPI web app, JSON API, and a CLI with multi-satellite/multi-station contact scheduling. Accuracy check against NASA's ISS ephemeris.
@@ -92,7 +100,7 @@ Display order: SignMeUp, OrbitTrack, Modulos — SignMeUp first as Aadi's strong
 - Render free tier: first load can take up to about a minute to wake.
 - What's next (confirmed by Aadi, already in progress): multi-satellite scheduling in the web app, accuracy vs. TLE age across successive NASA ephemerides, atmospheric refraction + priority-aware scheduling.
 
-**03 — Modulos** `slug: modulos` (formerly **PayoffPal** — renamed Oct 2026)
+**04 — Modulos** `slug: modulos` (formerly **PayoffPal** — renamed Oct 2026)
 - Tags: TypeScript, React, AWS Amplify, Cognito, AppSync, DynamoDB, Lambda, Plaid
 - Personal debt-management companion: enter (or import from your bank) income, expenses, and loans; get a debt-to-income affordability check for a new loan; build an avalanche payoff plan (highest APR first) with an interactive extra-payment timeline.
 - Live: https://www.modulos.app/ · Source: https://github.com/sri-meduri/modulos
@@ -153,7 +161,7 @@ Display order: SignMeUp, OrbitTrack, Modulos — SignMeUp first as Aadi's strong
 - **Languages:** Python, TypeScript, JavaScript, C++, C, Java, C#, SQL, R (TypeScript added from Aadi's commits in SignMeUp/Modulos)
 - **Frameworks:** FastAPI, Flask, Django, React, Unity, Skyfield
 - **Data & Cloud:** AWS (Glue, S3), PySpark, Delta Lake, PostgreSQL, Pandas, Render
-- **Tools:** Git, GitHub Actions, pytest, Docker (Docker added from SignMeUp's Dockerfile, Aadi's commit)
+- **Tools:** Git, GitHub Actions, pytest, Docker, CMake, WebAssembly (Docker from SignMeUp's Dockerfile; CMake and WebAssembly from Tessera — all Aadi's commits)
 
 Use official SVG logos where available; text-only chip as fallback.
 

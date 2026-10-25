@@ -1,5 +1,6 @@
 // From CLAUDE.md §4, plus TypeScript and Docker, which Aadi's own commits use
-// (SignMeUp's React + TypeScript frontend and Dockerfile, Modulos).
+// (SignMeUp's React + TypeScript frontend and Dockerfile, Modulos), and CMake and
+// WebAssembly (Tessera).
 // `logo` is a file in public/logos/ (monochrome Simple Icons, CC0). Items
 // without one render as a text chip — AWS, C#, Java, and Delta Lake have no
 // official mark in Simple Icons.
@@ -52,6 +53,8 @@ export const stack: StackGroup[] = [
       { name: "GitHub Actions", logo: "githubactions" },
       { name: "pytest", logo: "pytest" },
       { name: "Docker", logo: "docker" },
+      { name: "CMake", logo: "cmake" },
+      { name: "WebAssembly", logo: "webassembly" },
     ],
   },
 ];
