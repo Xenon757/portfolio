@@ -22,7 +22,7 @@ export const site = {
   status: "Open to Summer 2027 internships",
 } as const;
 
-/** About section copy. Facts from the résumé; no claims beyond it. Don't feature StatusGo here (Aadi just started). */
+/** About section copy. Facts from the résumé; no claims beyond it. */
 export const about = {
   // Revealed word by word on scroll.
   statement:

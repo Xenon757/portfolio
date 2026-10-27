@@ -1,5 +1,4 @@
-// From Aadi's résumés — see CLAUDE.md §4. Keep StatusGo's wording in progress
-// ("Migrating"): no completion, runtime, or record-count claims.
+// From Aadi's résumés — see CLAUDE.md §4.
 
 export type Experience = {
   company: string;
@@ -18,17 +17,6 @@ export type Experience = {
 };
 
 export const allExperience: Experience[] = [
-  {
-    company: "StatusGo",
-    role: "Software Engineer Intern",
-    start: "Sep 2026",
-    end: "Present",
-    location: "Remote",
-    // Aadi just started — show the role only, no details (Oct 2026). For later, the
-    // résumé bullet is: "Migrating a nightly data-processing pipeline from pandas to
-    // PySpark on AWS Glue, with Delta Lake on S3." Keep it in-progress wording.
-    bullets: [],
-  },
   {
     company: "Unico Studio",
     role: "Software Engineer Intern",

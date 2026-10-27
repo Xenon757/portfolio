@@ -42,7 +42,7 @@ Projects come right after the hero (decided with Aadi): recruiters already have 
    - `100+` — Students in the Python program he led (confirmed by Aadi)
    - `3rd` — Place at Purdue's largest freshman hackathon (HelloWorld)
 2. **Selected Projects** — numbered list (`_01.`, `_02.`, `_03.`) with project name + tech tags; on desktop, hovering a row shows a floating thumbnail that follows the cursor. Each row links to `/projects/[slug]`.
-3. **About** — short paragraph + a large statement line that reveals word-by-word on scroll. Draft from the résumé summary: backend, cloud, and production systems; hardening and deploying public web services; low-level work (Tessera, a C++ software rasterizer that runs in the browser via WebAssembly); **game development** (Unico Studio: C#/Unity, Brain Test, AppLovin MAX, Netcode multiplayer — plus **Relay**, Aadi's in-progress personal Unity puzzle game: top-down, each rewind leaves behind a ghost of your past run that you have to work with — source: his EA cover letter, Oct 2026; art style not finalized, no screenshots/repo/link yet — keep it to a mention in About with in-progress wording; no project card until Aadi has visuals). Also from the cover letter: he got into game dev in middle school by trying to rebuild his favorite racing game in Unity — say "a racing game", don't name the game (per Aadi)); teaching background. Don't mention StatusGo in About — Aadi just started there (it stays in Experience).
+3. **About** — short paragraph + a large statement line that reveals word-by-word on scroll. Draft from the résumé summary: backend, cloud, and production systems; hardening and deploying public web services; low-level work (Tessera, a C++ software rasterizer that runs in the browser via WebAssembly); **game development** (Unico Studio: C#/Unity, Brain Test, AppLovin MAX, Netcode multiplayer — plus **Relay**, Aadi's in-progress personal Unity puzzle game: top-down, each rewind leaves behind a ghost of your past run that you have to work with — source: his EA cover letter, Oct 2026; art style not finalized, no screenshots/repo/link yet — keep it to a mention in About with in-progress wording; no project card until Aadi has visuals). Also from the cover letter: he got into game dev in middle school by trying to rebuild his favorite racing game in Unity — say "a racing game", don't name the game (per Aadi)); teaching background.
 4. **Stack** — grouped logo grid (see `stack.ts` in §4).
 5. **Experience** — compact vertical list: company, role, dates, location, 1–3 bullets (expandable on click). Lines draw in on scroll. Sewa International is included as a "Volunteer" entry.
 6. **Contact / Footer** — big "Have an opportunity in mind?" + email, LinkedIn, "Designed & built by Aadi Belwal".
@@ -129,10 +129,7 @@ Display order: SignMeUp, Tessera, OrbitTrack, Modulos — SignMeUp first as Aadi
 
 ### `experience.ts`
 
-**StatusGo** — Software Engineer Intern · Remote · Sep 2026 – Present
-- Migrating a nightly data-processing pipeline from pandas to PySpark on AWS Glue with Delta Lake on S3.
-- Keep the **in-progress** wording ("Migrating"). Do not claim completion, runtime improvements, or record counts.
-- **Show the role only — no bullets/details** (Aadi just started). Listed in Experience (company, role, dates, location); not mentioned in About.
+**StatusGo** — removed from the site entirely (per Aadi, Oct 26 2026). Don't list it in Experience, About, or anywhere else unless Aadi asks.
 
 **Unico Studio** — Software Engineer Intern · Palo Alto, CA · May 2026 – Aug 2026
 - Résumé bullets merged with Aadi's EA cover letter (Oct 2026):
