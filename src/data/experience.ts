@@ -28,7 +28,7 @@ export const allExperience: Experience[] = [
       "Built the touch controls and core gameplay for Liquid Sort, a mobile puzzle game in Unity and C#, and wrote the shaders behind the liquid's look, color blending, and pour animation.",
       "Built a procedural level generator that checks every level for solvability and throws out the ones that can't be beaten, so players never hit a dead end.",
       "Built turn-based and head-to-head multiplayer with Netcode for GameObjects, keeping moves, scores, and timers in sync across clients.",
-      "Integrated the AppLovin MAX ad SDK with no-fill fallback handling, and fixed bugs in live games including Brain Test.",
+      "Integrated the AppLovin MAX ad SDK with no-fill fallback handling, and fixed bugs in Brain Test.",
     ],
   },
   {

@@ -136,7 +136,7 @@ Display order: SignMeUp, Tessera, OrbitTrack, Modulos — SignMeUp first as Aadi
 - Built touch controls and core gameplay for **Liquid Sort** (mobile puzzle game, Unity/C#); wrote the shaders for the liquid's look, color blending, and pour animation.
 - Built a procedural level generator that checks each level for solvability and discards unbeatable ones.
 - Built turn-based and head-to-head multiplayer with Netcode for GameObjects, syncing moves, scores, and timers.
-- Integrated the AppLovin MAX ad SDK with no-fill fallback handling; fixed bugs in live games including Brain Test.
+- Integrated the AppLovin MAX ad SDK with no-fill fallback handling; fixed bugs in Brain Test (say "fixed bugs", not "live games", per Aadi).
 
 **Bazar Earth** — Full Stack Engineer Intern · Palo Alto, CA · Sep 2024 – Sep 2025
 - Website: https://bazar.earth/ — link the company name to it in the Experience list. It's the company's product, built by a team; Aadi contributed features as an intern. Keep it under Experience only (not Selected Projects), and never phrase it as something he built himself.

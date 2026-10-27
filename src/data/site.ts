@@ -31,7 +31,7 @@ export const about = {
     "I'm a Computer Science student at Purdue University with junior standing, graduating in May 2028, and I've had four software internships across web, data, and games. As a volunteer, I also led a Python program for 100+ K–8 students at Sewa International, designing the curriculum and managing volunteer teachers.",
     "On my own projects I gravitate to the backend: APIs that validate their input, caches and retries that hold up when an upstream service doesn't, and tests that run offline. OrbitTrack's data mirror came out of a real production outage. I've also gone low-level: Tessera is a 3D software rasterizer I wrote from scratch in C++, multithreaded and SIMD-accelerated, that runs in the browser through WebAssembly.",
     "I got into game development in middle school, trying to rebuild my favorite racing game in Unity. It was rough, but it was the first real game I worked on. Now I'm building Relay, a top-down puzzle game in Unity where every rewind leaves behind a ghost of your past run that you have to work with.",
-    "At Unico Studio I worked on Liquid Sort, a mobile puzzle game: its touch controls, core gameplay, and liquid shaders, plus a procedural level generator that throws out any level that can't be solved. I also built turn-based and head-to-head multiplayer and fixed bugs in live games like Brain Test.",
+    "At Unico Studio I worked on Liquid Sort, a mobile puzzle game: its touch controls, core gameplay, and liquid shaders, plus a procedural level generator that throws out any level that can't be solved. I also built turn-based and head-to-head multiplayer and fixed bugs in Brain Test.",
   ],
 };
 
