@@ -74,11 +74,12 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 Display order: SignMeUp, Tessera, OrbitTrack, Modulos — SignMeUp first as Aadi's strongest, in-progress Modulos last (per Aadi). Tessera stays at 02 (confirmed by Aadi). The full page copy lives in `src/data/projects.ts`, written from each repo's README and commit history (checked 2026-10-21). The repos are the source of truth for technical facts and supersede older résumé figures; the notes below are the summary.
 
 **01 — SignMeUp** `slug: signmeup`
-- Tags: Python, Flask, Whisper, Stanza, MediaPipe, React, TypeScript, pytest, Fly.io
-- Live: https://signmeup.fly.dev/ · Source: https://github.com/Xenon757/SignMeUp (fork of ShlokShar/SignMeUp) · Devpost: https://devpost.com/software/signmeup-the-asl-subtitle
+- Tags: Python, Flask, Whisper, Stanza, MediaPipe, React, TypeScript, Chrome Extension, pytest, Fly.io
+- Live: https://signmeup.fly.dev/ · Chrome Web Store: https://chromewebstore.google.com/detail/signmeup-asl-for-youtube/jehdimfnbbfahecpbdlchaciioibpkkp · Source: https://github.com/Xenon757/SignMeUp (fork of ShlokShar/SignMeUp) · Devpost: https://devpost.com/software/signmeup-the-asl-subtitle
 - **Won 3rd place at HelloWorld 2025**, Purdue's largest hackathon for freshmen. Team project — credit the original team (as a group, per Aadi) and link the original repo and Devpost.
 - At the hackathon: Flask pipeline transcribing with Whisper and converting speech into ASL signs with Stanza parsing.
 - Since the hackathon, all work in the fork is Aadi's (82 commits, Sep 2025 – Oct 2026): upload video/audio → Whisper with word timestamps → ASL grammar rules → 2D animated signer built from ASL Signbank videos with MediaPipe, timed to speech; React + TypeScript frontend; demo page ("Me at the zoo" in YouTube's player) and compare page; path-traversal fix + upload hardening with regression test; Docker + Fly.io + GitHub Actions CI/CD. **130** Python + **11** frontend tests (the older résumé said 25).
+- Chrome extension (Oct 2026, published on the Chrome Web Store as "SignMeUp: ASL for YouTube"): signs YouTube videos from their own English captions, a minute at a time from where the viewer is (up to four minutes ahead); all 3,509 Signbank signs with a video animated ahead of time; signed chunks cached server-side. Tests as of Oct 27 2026: **149** Python + **21** TypeScript (12 frontend, 9 extension). No user counts — don't claim installs.
 - Don't use frames of the YouTube demo video in screenshots (third-party video showing a real person).
 - What's next: none listed (Aadi is fine with the page as is).
 

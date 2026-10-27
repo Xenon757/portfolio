@@ -44,12 +44,16 @@ export const projects: Project[] = [
     slug: "signmeup",
     name: "SignMeUp",
     tagline:
-      "Turns the speech in a video into ASL, signed by an animated figure timed to the words.",
-    tags: ["Python", "Flask", "Whisper", "Stanza", "MediaPipe", "React", "TypeScript", "pytest", "Fly.io"],
+      "Turns the speech in a video into ASL, signed by an animated figure timed to the words, on its own site and on YouTube through a Chrome extension.",
+    tags: ["Python", "Flask", "Whisper", "Stanza", "MediaPipe", "React", "TypeScript", "Chrome Extension", "pytest", "Fly.io"],
     award: "3rd place · HelloWorld 2025",
     live: "https://signmeup.fly.dev/",
     source: "https://github.com/Xenon757/SignMeUp",
     links: [
+      {
+        label: "Chrome Web Store",
+        href: "https://chromewebstore.google.com/detail/signmeup-asl-for-youtube/jehdimfnbbfahecpbdlchaciioibpkkp",
+      },
       { label: "Original team repo", href: "https://github.com/ShlokShar/SignMeUp" },
       { label: "Devpost", href: "https://devpost.com/software/signmeup-the-asl-subtitle" },
     ],
@@ -73,6 +77,7 @@ export const projects: Project[] = [
       "Since then: upload a video or audio file and SignMeUp transcribes it with word timings, translates each sentence with ASL grammar rules, and signs it with a 2D animated figure in a corner of the video, like a TV interpreter.",
       "A demo that signs “Me at the zoo” (the first YouTube video) without uploading anything, and a compare page that plays any word's animation next to its source dictionary video.",
       "“Optimize for ASL,” which slows the video just enough that the signs fit comfortably.",
+      "A Chrome extension, published on the Chrome Web Store, that signs whatever YouTube video you're watching from its own English captions, with the signer in a corner of YouTube's player.",
     ],
     how: [
       {
@@ -88,17 +93,21 @@ export const projects: Project[] = [
         body: "When speech is slow enough, each sign starts within half a second of its word. In fast stretches it works like closed captions: a sentence's signs share the time until the next sentence, played at 1.5× and up to 3× when needed.",
       },
       {
+        title: "Signing two-hour videos on YouTube",
+        body: "Transcribing a long video before it plays isn't an option, so the extension never does. It reads the video's own captions (auto-generated ones time each word), and the server signs one minute at a time starting where you are, keeping up to four minutes ahead and starting over after a seek. Every one of the 3,509 Signbank signs with a video is animated ahead of time, and signed chunks are cached on the server, so a popular video is only translated once.",
+      },
+      {
         title: "Fixing a path-traversal bug",
         body: "The original upload handler used the uploaded filename as the file path, so a name like ../../app.py could write outside the upload folder. Uploads now get random storage names, size and type limits, and are deleted after processing, with a regression test for the exploit.",
       },
       {
         title: "Shipping it",
-        body: "A Docker image bakes in the Whisper, Stanza, and MediaPipe models and runs on Fly.io, deployed by GitHub Actions after the Python and frontend tests pass. Models load at startup and the 858 signs for the most common English words are animated ahead of time, so uploads don't wait on cold starts. 130 Python tests and 11 frontend tests run offline.",
+        body: "A Docker image bakes in the Whisper, Stanza, and MediaPipe models and runs on Fly.io, deployed by GitHub Actions after the Python and frontend tests pass. Models load at startup and the 858 signs for the most common English words are animated ahead of time, so uploads don't wait on cold starts. 149 Python tests and 21 TypeScript tests for the site and the extension run offline.",
       },
     ],
     role: [
       "Member of the hackathon team that built the original version.",
-      "After the hackathon, continued it on my own: fixed the path-traversal vulnerability and hardened uploads, split the pipeline into tested modules, built the animated signer and its timing, reworked the translation rules, rebuilt the frontend in React and TypeScript, and set up Docker, Fly.io, and CI/CD.",
+      "After the hackathon, continued it on my own: fixed the path-traversal vulnerability and hardened uploads, split the pipeline into tested modules, built the animated signer and its timing, reworked the translation rules, rebuilt the frontend in React and TypeScript, built and published the Chrome extension, and set up Docker, Fly.io, and CI/CD.",
     ],
     // Aadi (Oct 2026): fine as is — team credited as a group, no "What's next".
     next: [],
