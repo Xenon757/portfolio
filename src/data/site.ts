@@ -53,5 +53,5 @@ export const stats = [
 ] as const;
 
 // No GitHub profile or résumé links on the site (Aadi tailors his résumé per
-// application). Project pages still link each project's source repo.
+// application), and no project source buttons.
 export const socials = [{ label: "LinkedIn", href: site.linkedin }] as const;

@@ -19,7 +19,6 @@ export type Project = {
   status?: "in-progress";
   award?: string;
   live?: string;
-  source?: string;
   /** Shown under the Live button, e.g. a cold-start warning. */
   liveNote?: string;
   /** Extra links (original repo, Devpost, ...). */
@@ -48,7 +47,6 @@ export const projects: Project[] = [
     tags: ["Python", "Flask", "Whisper", "Stanza", "MediaPipe", "React", "TypeScript", "Chrome Extension", "pytest", "Fly.io"],
     award: "3rd place · HelloWorld 2025",
     live: "https://signmeup.fly.dev/",
-    source: "https://github.com/Xenon757/SignMeUp",
     links: [
       {
         label: "Chrome Web Store",
@@ -119,7 +117,6 @@ export const projects: Project[] = [
       "A real-time 3D software rasterizer written from scratch in C++, with no GPU API, plus a Blender-style editor that runs in the browser via WebAssembly.",
     tags: ["C++17", "WebAssembly", "SIMD", "Multithreading", "CMake", "SDL2", "JavaScript", "Cloudflare Workers", "Claude API"],
     live: "https://xenon757.github.io/tessera/",
-    source: "https://github.com/Xenon757/tessera",
     liveNote: "The editor runs entirely in your browser. On the first visit it reloads once to turn on multithreading.",
     thumbnail: {
       src: "/projects/tessera-thumb.webp",
@@ -185,7 +182,6 @@ export const projects: Project[] = [
       "Predicts when satellites pass over any ground station, with rise, peak and set times, sky paths and ground tracks, as a web app, JSON API and CLI.",
     tags: ["Python", "Skyfield", "FastAPI", "pytest", "mypy", "GitHub Actions", "Render"],
     live: "https://orbittrack-dpeo.onrender.com/",
-    source: "https://github.com/Xenon757/Orbittrack",
     liveNote: "Hosted on Render's free tier, so the first load can take up to a minute while it wakes up.",
     thumbnail: {
       src: "/projects/orbittrack-thumb.webp",
@@ -252,7 +248,6 @@ export const projects: Project[] = [
     tags: ["TypeScript", "React", "AWS Amplify", "Cognito", "AppSync", "DynamoDB", "Lambda", "Plaid"],
     status: "in-progress",
     live: "https://www.modulos.app/",
-    source: "https://github.com/sri-meduri/modulos",
     team: "Team project with Sri Meduri. Sri came up with the idea, runs marketing, and built the 12-month income vs. expenses chart. I built the app and its backend.",
     links: [{ label: "Sri on GitHub", href: "https://github.com/sri-meduri" }],
     thumbnail: {

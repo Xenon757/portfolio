@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { GitHubIcon } from "@/components/ui/BrandIcons";
 import { Button } from "@/components/ui/Button";
 import { Badge, Tag } from "@/components/ui/Tag";
 import { getProject, projects } from "@/data/projects";
@@ -106,12 +105,6 @@ export default async function ProjectPage({ params }: Props) {
             <Button variant="primary" href={project.live} external>
               <ArrowUpRight className="size-4" aria-hidden="true" />
               Live site
-            </Button>
-          )}
-          {project.source && (
-            <Button href={project.source} external>
-              <GitHubIcon className="size-4" />
-              Source
             </Button>
           )}
           {project.links?.map((link) => (
