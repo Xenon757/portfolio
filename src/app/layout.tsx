@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Anton, Geist } from "next/font/google";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { Contact } from "@/components/sections/Contact";
@@ -79,6 +80,7 @@ export default function RootLayout({
           {children}
           <Contact />
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );

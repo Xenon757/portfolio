@@ -27,6 +27,7 @@ Primary audience: internship recruiters (SWE, backend/cloud, ground software, fi
 | Images | `next/image`, `.webp` thumbnails in `public/projects/` |
 | Deploy | Vercel |
 | Package manager | pnpm |
+| Analytics | `@vercel/analytics` (Vercel Web Analytics: cookieless, country-level; added with Aadi's OK, Nov 2026) |
 
 Don't add Redux, a CMS, a database, or a UI kit — content is static and lives in TypeScript files.
 
