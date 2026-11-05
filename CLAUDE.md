@@ -39,7 +39,7 @@ Don't add Redux, a CMS, a database, or a UI kit — content is static and lives 
 Projects come right after the hero (decided with Aadi): recruiters already have the résumé, so the site's unique value is the projects. Experience stays, but lower and compact.
 
 1. **Hero** — "SOFTWARE ENGINEER" headline (huge, uppercase), one-line intro (mentions backend, cloud, and game development), CTA buttons (Email / LinkedIn), small status pill ("Open to Summer 2027 internships"), and a "View projects" link to `#projects`. Staggered text reveal on load. **Stats live inside the hero** (right column on desktop, a row on mobile) and count up as it reveals. Use these (all from the résumé):
-   - `4` — Software internships
+   - `3` — Software internships (Unico Studio, Bazar Earth, Probability Management; StatusGo is off the site, per Aadi)
    - `100+` — Students in the Python program he led (confirmed by Aadi)
    - `3rd` — Place at Purdue's largest freshman hackathon (HelloWorld)
 2. **Selected Projects** — numbered list (`_01.`, `_02.`, `_03.`) with project name + tech tags; on desktop, hovering a row shows a floating thumbnail that follows the cursor. Each row links to `/projects/[slug]`.

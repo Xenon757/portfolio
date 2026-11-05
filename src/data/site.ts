@@ -15,7 +15,7 @@ export const site = {
     "Computer Science student at Purdue University building backend and cloud systems and multiplayer mobile games.",
   // From the résumé summary plus the Unico Studio (games) internship.
   intro:
-    "CS student at Purdue with four software internships across backend, cloud, and game development, from hardened web services to multiplayer for production mobile games.",
+    "CS student at Purdue with three software internships across backend, cloud, and game development, from hardened web services to multiplayer for production mobile games.",
   email: "aadibelwal@gmail.com",
   linkedin: "https://linkedin.com/in/aadi-belwal",
   location: "Palo Alto, CA / West Lafayette, IN",
@@ -28,7 +28,7 @@ export const about = {
   statement:
     "I build software that keeps working after it ships, from backend services that hold up under real traffic to multiplayer mobile games.",
   paragraphs: [
-    "I'm a Computer Science student at Purdue University with junior standing, graduating in May 2028, and I've had four software internships across web, data, and games. As a volunteer, I also led a Python program for 100+ K–8 students at Sewa International, designing the curriculum and managing volunteer teachers.",
+    "I'm a Computer Science student at Purdue University with junior standing, graduating in May 2028, and I've had three software internships across web, data, and games. As a volunteer, I also led a Python program for 100+ K–8 students at Sewa International, designing the curriculum and managing volunteer teachers.",
     "On my own projects I gravitate to the backend: APIs that validate their input, caches and retries that hold up when an upstream service doesn't, and tests that run offline. OrbitTrack's data mirror came out of a real production outage. I've also gone low-level: Tessera is a 3D software rasterizer I wrote from scratch in C++, multithreaded and SIMD-accelerated, that runs in the browser through WebAssembly.",
     "I got into game development in middle school, trying to rebuild my favorite racing game in Unity. It was rough, but it was the first real game I worked on. Now I'm building Relay, a top-down puzzle game in Unity where every rewind leaves behind a ghost of your past run that you have to work with.",
     "At Unico Studio I worked on Liquid Sort, a mobile puzzle game: its touch controls, core gameplay, and liquid shaders, plus a procedural level generator that throws out any level that can't be solved. I also built turn-based and head-to-head multiplayer and fixed bugs in Brain Test.",
@@ -47,7 +47,7 @@ export const nav = [
 
 /** Hero counters — all from the résumé. */
 export const stats = [
-  { value: 4, suffix: "", label: "Software internships" },
+  { value: 3, suffix: "", label: "Software internships" },
   { value: 100, suffix: "+", label: "Students in the Python program I led" },
   { value: 3, suffix: "rd", label: "Place at Purdue's largest freshman hackathon" },
 ] as const;
