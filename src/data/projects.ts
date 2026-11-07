@@ -247,7 +247,7 @@ export const projects: Project[] = [
       "A personal debt-management companion: check whether a new loan is affordable and plan the fastest way out of debt.",
     tags: ["TypeScript", "React", "AWS Amplify", "Cognito", "AppSync", "DynamoDB", "Lambda", "Plaid"],
     status: "in-progress",
-    live: "https://www.modulos.app/",
+    // No live link (per Aadi, Nov 2026): it's presented as an in-progress project.
     team: "Team project with Sri Meduri. Sri came up with the idea, runs marketing, and built the 12-month income vs. expenses chart. I built the app and its backend.",
     links: [{ label: "Sri on GitHub", href: "https://github.com/sri-meduri" }],
     thumbnail: {
@@ -306,7 +306,7 @@ export const projects: Project[] = [
       "Added the privacy policy, sign-up consent, and search-engine basics (robots.txt, sitemap).",
     ],
     // Aadi: still in development, no specific roadmap to list.
-    next: ["Modulos is still in development. You can try it without an account in guest mode at modulos.app."],
+    next: ["Modulos is still in development."],
   },
 ];
 

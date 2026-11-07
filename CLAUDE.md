@@ -105,7 +105,7 @@ Display order: SignMeUp, Tessera, OrbitTrack, Modulos — SignMeUp first as Aadi
 **04 — Modulos** `slug: modulos` (formerly **PayoffPal** — renamed Oct 2026)
 - Tags: TypeScript, React, AWS Amplify, Cognito, AppSync, DynamoDB, Lambda, Plaid
 - Personal debt-management companion: enter (or import from your bank) income, expenses, and loans; get a debt-to-income affordability check for a new loan; build an avalanche payoff plan (highest APR first) with an interactive extra-payment timeline.
-- Live: https://www.modulos.app/ · Source: https://github.com/sri-meduri/modulos
+- Live: https://www.modulos.app/ — **not linked on the site** (per Aadi, Nov 7 2026); present it only as an in-progress project. Source: https://github.com/sri-meduri/modulos
 - Status: **In development** — show an "In progress" badge.
 - Team project with **Sri Meduri** (github.com/sri-meduri, owns the repo). Credit Sri on the project page.
   - Sri: came up with the idea; handles marketing; also built the 12-month income vs. expenses chart.
@@ -127,7 +127,7 @@ Display order: SignMeUp, Tessera, OrbitTrack, Modulos — SignMeUp first as Aadi
   - `modulos-dashboard.webp` — dashboard; its income vs. expenses chart is Sri's work, so caption it neutrally
   - `modulos-payoff-chart.webp` — payoff timeline + per-loan schedules
 - Sri approved being named and linked.
-- What's next: just "still in development" (no roadmap to list, per Aadi).
+- What's next: just "Modulos is still in development." (no roadmap, no link to try it, per Aadi).
 
 ### `experience.ts`
 
