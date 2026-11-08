@@ -72,8 +72,7 @@ export const projects: Project[] = [
       "Captions are written English, but for many Deaf viewers ASL is their first language and English their second, so captions alone can mean watching in a second language. SignMeUp signs the speech in ASL and keeps the captions.",
     ],
     built: [
-      "At the hackathon, the team built a Flask pipeline that transcribes video with Whisper and uses Stanza parsing to convert speech into ASL signs.",
-      "Since then: upload a video or audio file and SignMeUp transcribes it with word timings, translates each sentence with ASL grammar rules, and signs it with a 2D animated figure in a corner of the video, like a TV interpreter.",
+      "Upload a video or audio file and SignMeUp transcribes it with Whisper, keeping word timings, translates each sentence into ASL with grammar rules built on Stanza's parse, and signs it with a 2D animated figure in a corner of the video, like a TV interpreter.",
       "A demo that signs “Me at the zoo” (the first YouTube video) without uploading anything, and a compare page that plays any word's animation next to its source dictionary video.",
       "“Optimize for ASL,” which slows the video just enough that the signs fit comfortably.",
       "A Chrome extension, published on the Chrome Web Store, that signs whatever YouTube video you're watching from its own English captions, with the signer in a corner of YouTube's player.",
@@ -105,8 +104,7 @@ export const projects: Project[] = [
       },
     ],
     role: [
-      "Member of the hackathon team that built the original version.",
-      "After the hackathon, continued it on my own: fixed the path-traversal vulnerability and hardened uploads, split the pipeline into tested modules, built the animated signer and its timing, reworked the translation rules, rebuilt the frontend in React and TypeScript, built and published the Chrome extension, and set up Docker, Fly.io, and CI/CD.",
+      "Fixed the path-traversal vulnerability and hardened uploads, split the pipeline into tested modules, built the animated signer and its timing, reworked the translation rules, rebuilt the frontend in React and TypeScript, built and published the Chrome extension, and set up Docker, Fly.io, and CI/CD.",
     ],
     // Aadi (Oct 2026): fine as is — team credited as a group, no "What's next".
     next: [],

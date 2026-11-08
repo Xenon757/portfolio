@@ -82,6 +82,7 @@ Display order: SignMeUp, Tessera, OrbitTrack, Modulos — SignMeUp first as Aadi
 - Since the hackathon, all work in the fork is Aadi's (82 commits, Sep 2025 – Oct 2026): upload video/audio → Whisper with word timestamps → ASL grammar rules → 2D animated signer built from ASL Signbank videos with MediaPipe, timed to speech; React + TypeScript frontend; demo page ("Me at the zoo" in YouTube's player) and compare page; path-traversal fix + upload hardening with regression test; Docker + Fly.io + GitHub Actions CI/CD. **130** Python + **11** frontend tests (the older résumé said 25).
 - Chrome extension (Oct 2026, published on the Chrome Web Store as "SignMeUp: ASL for YouTube"): signs YouTube videos from their own English captions, a minute at a time from where the viewer is (up to four minutes ahead); all 3,509 Signbank signs with a video animated ahead of time; signed chunks cached server-side. Tests as of Oct 27 2026: **149** Python + **21** TypeScript (12 frontend, 9 extension). No user counts — don't claim installs.
 - Don't use frames of the YouTube demo video in screenshots (third-party video showing a real person).
+- Page copy doesn't split the work into "at the hackathon" vs. "after" (per Aadi, Nov 2026): the team note at the top credits the team and the 3rd place; "My role" just lists Aadi's work.
 - What's next: none listed (Aadi is fine with the page as is).
 
 **02 — Tessera** `slug: tessera` — solo project (all 124 commits are Aadi's, Oct 2026)
