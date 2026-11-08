@@ -11,7 +11,7 @@ const PREVIEW_W = 360; // px; thumbnails are 16:10
  * Floating thumbnail that follows the cursor over the server-rendered project
  * rows ([data-project-index] inside #projects). Mouse/trackpad devices only.
  */
-export function ProjectsPreview({ thumbnails }: { thumbnails: string[] }) {
+export function ProjectsPreview({ thumbnails }: { thumbnails: (string | null)[] }) {
   const previewRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<number | null>(null);
   const [canPreview, setCanPreview] = useState(false);
@@ -71,16 +71,19 @@ export function ProjectsPreview({ thumbnails }: { thumbnails: string[] }) {
     };
   }, [canPreview]);
 
+  // Rows without a thumbnail show no preview.
+  const shown = active !== null && thumbnails[active] ? active : null;
+
   useEffect(() => {
     const preview = previewRef.current;
     if (!preview) return;
     gsap.to(preview, {
-      autoAlpha: active === null ? 0 : 1,
-      scale: active === null ? 0.9 : 1,
+      autoAlpha: shown === null ? 0 : 1,
+      scale: shown === null ? 0.9 : 1,
       duration: prefersReducedMotion() ? 0 : 0.3,
       ease: "power2.out",
     });
-  }, [active]);
+  }, [shown]);
 
   if (!canPreview) return null;
 
@@ -91,16 +94,19 @@ export function ProjectsPreview({ thumbnails }: { thumbnails: string[] }) {
       style={{ width: PREVIEW_W }}
       className="pointer-events-none invisible fixed top-0 left-0 z-30 aspect-[16/10] overflow-hidden rounded-xl border border-line opacity-0 shadow-2xl shadow-black/50"
     >
-      {thumbnails.map((src, i) => (
-        <Image
-          key={src}
-          src={src}
-          alt=""
-          fill
-          sizes={`${PREVIEW_W}px`}
-          className={cn("object-cover object-top transition-opacity duration-300", active === i ? "opacity-100" : "opacity-0")}
-        />
-      ))}
+      {thumbnails.map(
+        (src, i) =>
+          src && (
+            <Image
+              key={src}
+              src={src}
+              alt=""
+              fill
+              sizes={`${PREVIEW_W}px`}
+              className={cn("object-cover object-top transition-opacity duration-300", shown === i ? "opacity-100" : "opacity-0")}
+            />
+          ),
+      )}
     </div>
   );
 }

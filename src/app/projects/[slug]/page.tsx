@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Badge, Tag } from "@/components/ui/Tag";
 import { getProject, projects } from "@/data/projects";
-import { site } from "@/data/site";
+import { defaultShareImage, site } from "@/data/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -20,7 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProject((await params).slug);
   if (!project) return {};
   // 1200x630 JPEG crops of the thumbnail: LinkedIn and others don't reliably show WebP.
-  const ogImage = { url: `/projects/${project.slug}-og.jpg`, width: 1200, height: 630, alt: project.thumbnail.alt };
+  const ogImage = project.thumbnail
+    ? { url: `/projects/${project.slug}-og.jpg`, width: 1200, height: 630, alt: project.thumbnail.alt }
+    : defaultShareImage;
   return {
     title: project.name,
     description: project.tagline,
@@ -123,17 +125,19 @@ export default async function ProjectPage({ params }: Props) {
         )}
       </header>
 
-      <div className="mt-12 overflow-hidden rounded-2xl border border-line md:mt-16">
-        <Image
-          src={project.thumbnail.src}
-          alt={project.thumbnail.alt}
-          width={2880}
-          height={1800}
-          priority
-          sizes="(min-width: 1280px) 1184px, 100vw"
-          className="h-auto w-full"
-        />
-      </div>
+      {project.thumbnail && (
+        <div className="mt-12 overflow-hidden rounded-2xl border border-line md:mt-16">
+          <Image
+            src={project.thumbnail.src}
+            alt={project.thumbnail.alt}
+            width={2880}
+            height={1800}
+            priority
+            sizes="(min-width: 1280px) 1184px, 100vw"
+            className="h-auto w-full"
+          />
+        </div>
+      )}
 
       <div className="mt-16 md:mt-24">
         <Section n={step()} title="Problem">

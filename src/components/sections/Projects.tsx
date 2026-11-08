@@ -57,7 +57,7 @@ export function Projects() {
         ))}
       </ul>
 
-      <ProjectsPreview thumbnails={projects.map((p) => p.thumbnail.src)} />
+      <ProjectsPreview thumbnails={projects.map((p) => p.thumbnail?.src ?? null)} />
     </section>
   );
 }

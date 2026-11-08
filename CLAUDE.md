@@ -121,11 +121,7 @@ Display order: SignMeUp, Tessera, OrbitTrack, Modulos — SignMeUp first as Aadi
 - Frontend: React 19, Vite, Tailwind, Recharts, React Router.
 - "My role" must describe only Aadi's engineering work — don't credit him with the idea, marketing, or Sri's income vs. expenses chart.
 - Don't claim users, real-bank production status, or launch — it's in development.
-- Screenshots in `public/projects/` (taken from guest mode with fictional sample data — not real user data):
-  - `modulos-thumb.webp` — payoff plan with extra-payment simulation (Aadi's payoff math)
-  - `modulos-landing.webp` — landing page hero
-  - `modulos-dashboard.webp` — dashboard; its income vs. expenses chart is Sri's work, so caption it neutrally
-  - `modulos-payoff-chart.webp` — payoff timeline + per-loan schedules
+- **No screenshots** (per Aadi, Nov 7 2026): the UI is being drastically redesigned, so the page has no hero image, gallery, hover preview, or own share image (it falls back to `/og.png`). The old screenshots were deleted from `public/projects/`. Add new ones only when Aadi provides or approves the new UI.
 - Sri approved being named and linked.
 - What's next: just "Modulos is still in development." (no roadmap, no link to try it, per Aadi).
 

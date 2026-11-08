@@ -7,7 +7,7 @@ import { Cursor } from "@/components/ui/Cursor";
 import { DotField } from "@/components/ui/DotField";
 import { Intro } from "@/components/ui/Intro";
 import { Menu } from "@/components/ui/Menu";
-import { site } from "@/data/site";
+import { defaultShareImage, site } from "@/data/site";
 import { INTRO_SEEN_KEY } from "@/lib/intro";
 import "./globals.css";
 
@@ -22,13 +22,8 @@ const body = Geist({
   subsets: ["latin"],
 });
 
-// Default share image (1200x630). Project pages set their own.
-const ogImage = {
-  url: "/og.png",
-  width: 1200,
-  height: 630,
-  alt: "Aadi Belwal, Software Engineer: Computer Science at Purdue University, open to Summer 2027 internships.",
-};
+// Default share image (1200x630). Project pages with a thumbnail set their own.
+const ogImage = defaultShareImage;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

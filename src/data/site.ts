@@ -55,3 +55,11 @@ export const stats = [
 // No GitHub profile or résumé links on the site (Aadi tailors his résumé per
 // application), and no project source buttons.
 export const socials = [{ label: "LinkedIn", href: site.linkedin }] as const;
+
+// Default share image (1200x630), also used by project pages without a thumbnail.
+export const defaultShareImage = {
+  url: "/og.png",
+  width: 1200,
+  height: 630,
+  alt: "Aadi Belwal, Software Engineer: Computer Science at Purdue University, open to Summer 2027 internships.",
+};

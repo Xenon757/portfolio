@@ -25,7 +25,8 @@ export type Project = {
   links?: ProjectLink[];
   /** Team credit, shown near the top of the page. Omit for solo projects. */
   team?: string;
-  thumbnail: ProjectImage;
+  /** Hero image, hover preview, and share-image source. Omit to show none. */
+  thumbnail?: ProjectImage;
   images: ProjectImage[];
   problem: string[];
   built: string[];
@@ -250,27 +251,8 @@ export const projects: Project[] = [
     // No live link (per Aadi, Nov 2026): it's presented as an in-progress project.
     team: "Team project with Sri Meduri. Sri came up with the idea, runs marketing, and built the 12-month income vs. expenses chart. I built the app and its backend.",
     links: [{ label: "Sri on GitHub", href: "https://github.com/sri-meduri" }],
-    thumbnail: {
-      src: "/projects/modulos-thumb.webp",
-      alt: "Modulos payoff plan: with $400 extra a month, debt-free in 2 years 9 months instead of 4 years 3 months, saving $3,630 in interest.",
-    },
-    images: [
-      {
-        src: "/projects/modulos-payoff-chart.webp",
-        alt: "Modulos payoff timeline bar chart and per-loan payoff schedules for a credit card, auto loan, and student loan.",
-        caption: "Avalanche payoff timeline and per-loan schedules (sample data).",
-      },
-      {
-        src: "/projects/modulos-dashboard.webp",
-        alt: "Modulos dashboard with a 12-month income and expenses chart and summary cards.",
-        caption: "The dashboard (sample data).",
-      },
-      {
-        src: "/projects/modulos-landing.webp",
-        alt: "Modulos landing page: Take Control of Your Loans.",
-        caption: "Landing page.",
-      },
-    ],
+    // No screenshots (per Aadi, Nov 2026): the UI is being redesigned.
+    images: [],
     problem: [
       "People juggling several loans often can't tell whether a new loan is actually affordable, or which debt to pay down first. Most tools that help either require a bank login or try to sell refinancing.",
       "Modulos answers both questions in a couple of minutes, with or without connecting a bank.",
