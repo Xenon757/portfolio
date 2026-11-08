@@ -56,7 +56,7 @@ export const projects: Project[] = [
       { label: "Original team repo", href: "https://github.com/ShlokShar/SignMeUp" },
       { label: "Devpost", href: "https://devpost.com/software/signmeup-the-asl-subtitle" },
     ],
-    team: "Team project: built at HelloWorld 2025, Purdue's largest hackathon for freshmen, by the SignMeUp team, where it won 3rd place. I've continued it in my own fork since.",
+    team: "Team project: built at HelloWorld 2025, Purdue's largest hackathon for freshmen, by the SignMeUp team, where it won 3rd place.",
     thumbnail: {
       src: "/projects/signmeup-thumb.webp",
       alt: "SignMeUp landing page with an upload box and an animated signer performing the sign THANK-YOU.",
