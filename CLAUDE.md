@@ -63,7 +63,7 @@ All content lives in `src/data/` — components never hardcode copy. Content bel
 ### `site.ts`
 - Name: Aadi Belwal
 - Email: aadibelwal@gmail.com
-- GitHub: https://github.com/Xenon757 — **don't link his GitHub profile anywhere on the site** (per Aadi). No Source buttons on project pages either (removed per Aadi, Oct 28 2026); the team-credit links (SignMeUp's original team repo, Sri on GitHub) stay.
+- GitHub: https://github.com/Xenon757 — **don't link his GitHub profile anywhere on the site** (per Aadi). No Source buttons on project pages either (removed per Aadi, Oct 28 2026); the team-credit links (SignMeUp's original team repo, Modulos' "Project repo" link to sri-meduri/modulos) stay.
 - LinkedIn: https://linkedin.com/in/aadi-belwal
 - Location: Palo Alto, CA / West Lafayette, IN
 - **No résumé on the site** — no download, link, or PDF in the repo. Aadi tailors his résumé for each company. (An earlier copy was purged from git history.)

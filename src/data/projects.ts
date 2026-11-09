@@ -248,7 +248,7 @@ export const projects: Project[] = [
     status: "in-progress",
     // No live link (per Aadi, Nov 2026): it's presented as an in-progress project.
     team: "Team project with Sri Meduri. Sri came up with the idea, runs marketing, and built the 12-month income vs. expenses chart. I built the app and its backend.",
-    links: [{ label: "Sri on GitHub", href: "https://github.com/sri-meduri" }],
+    links: [{ label: "Project repo", href: "https://github.com/sri-meduri/modulos" }],
     // No screenshots (per Aadi, Nov 2026): the UI is being redesigned.
     images: [],
     problem: [
